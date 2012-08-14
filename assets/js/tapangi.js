@@ -1,0 +1,1 @@
+window.Tapangi={};Tapangi.onResize=function(){var e=parseInt($(".navbar .navbar-inner").css("height").substr(0,3)),t=window.innerHeight-e;console.log(e,t);$(".container.body > div").css("height",t);$('[data-spy="scroll"]').each(function(){$(this).scrollspy("refresh")})};$(document).ready(Tapangi.onResize);$(window).resize(Tapangi.onResize);
