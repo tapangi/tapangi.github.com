@@ -27,6 +27,11 @@
       }
     }
   }
+  iframe {
+    width: 0px;
+    height: 0px;
+    visibility: hidden;
+  }
   form {
     //resets
     input, textarea {
@@ -64,8 +69,9 @@
           padding: 14px;
           margin: 0;
           input {
-            height: 37px;
+            height: 35px;
             padding: 10px;
+            border: 1px solid #E2E2E2;
           }
           .fn, .ln {
             width: 180px;

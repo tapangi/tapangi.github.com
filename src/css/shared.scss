@@ -32,13 +32,13 @@
 
 @media (min-width: 980px) {
   body {
-    //padding-top: 100px; /* 60px to make the container go all the way to the bottom of the topbar */
+
   }
 
   .container {
     &.body > div {
       padding-top: 135px;
-      @include default-font;
+
       font-size: 16px;
       line-height: 24px;
 
@@ -67,5 +67,6 @@
 body {
   background: url(../img/tapangi-background.png) repeat;
   background-attachment: fixed;
+  @include default-font;
 }
 

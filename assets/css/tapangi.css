@@ -22,8 +22,6 @@
 @media (min-width: 980px) {
   .container.body > div {
     padding-top: 135px;
-    font-family: 'TitilliumText22LLight';
-    font-size: 26px;
     font-size: 16px;
     line-height: 24px; }
   .container .section .side-label {
@@ -38,7 +36,9 @@
     border-top: 1px solid #aaadb3; } }
 body {
   background: url(../img/tapangi-background.png) repeat;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  font-family: 'TitilliumText22LLight';
+  font-size: 26px; }
 
 .navbar {
   color: #5d636f; }
@@ -112,6 +112,13 @@ body {
 
 #who .sub-section .description {
   padding: 15px; }
+#who .sub-section .photo {
+  width: 335px;
+  height: 220px; }
+  #who .sub-section .photo.piotr {
+    background: url(../img/piotr.jpg) center center no-repeat; }
+  #who .sub-section .photo.liz {
+    background: url(../img/liz.jpg) center center no-repeat; }
 
 .info {
   display: inline-block;
@@ -1081,6 +1088,10 @@ form li.complex p.error {
   height: 85px; }
 #contact .row.sub-section > div {
   display: inline-block; }
+#contact iframe {
+  width: 0px;
+  height: 0px;
+  visibility: hidden; }
 #contact form input, #contact form textarea {
   margin: 0;
   padding: 0;
@@ -1112,8 +1123,9 @@ form li.complex p.error {
       padding: 14px;
       margin: 0; }
       #contact form ul li .field-body input {
-        height: 37px;
-        padding: 10px; }
+        height: 35px;
+        padding: 10px;
+        border: 1px solid #E2E2E2; }
       #contact form ul li .field-body .fn, #contact form ul li .field-body .ln {
         width: 180px; }
       #contact form ul li .field-body .org, #contact form ul li .field-body .email, #contact form ul li .field-body .message {
