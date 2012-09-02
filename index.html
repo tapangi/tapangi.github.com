@@ -1,90 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Tapangi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Tapangi Consulting LLC">
+  <meta charset="utf-8">
+  <title>Tapangi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="Tapangi Consulting LLC">
 
-    <!-- styles -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="assets/css/tapangi.css" rel="stylesheet">
+  <!-- styles -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/bootstrap-responsive.min.css" rel="stylesheet">
+  <link href="assets/css/tapangi.css" rel="stylesheet">
 
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-    <!-- Le fav and touch icons -->
-    <!--<link rel="shortcut icon" href="assets/ico/favicon.ico">-->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+  <!-- Le fav and touch icons -->
+  <!--<link rel="shortcut icon" href="assets/ico/favicon.ico">-->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
 
-    <script type="text/javascript">
-        //        var _gaq = _gaq || [];
-        //        _gaq.push(['_setAccount', 'FIXME']);
-        //        _gaq.push(['_trackPageview']);
-        //        (function() {
-        //            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        //            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        //            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        //        })();
-    </script>
+  <script type="text/javascript">
+    //        var _gaq = _gaq || [];
+    //        _gaq.push(['_setAccount', 'FIXME']);
+    //        _gaq.push(['_trackPageview']);
+    //        (function() {
+    //            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    //            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    //            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    //        })();
+  </script>
 </head>
 
-<body data-spy="scroll" data-target="#navbar">
+<body data-spy="scroll" data-target="#navbar" id="public">
 <!-- Navbar
 ================================================== -->
 <div class="navbar navbar-fixed-top" id="navbar">
-    <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="logo" href="./index.html"></a>
+  <div class="navbar-inner">
+    <div class="container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="logo" href="./index.html"></a>
 
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li style="display: none">
-                        <a href="#home">Home</a>
-                    </li>
-                    <li>
-                        <a href="#what">What We Do</a>
-                    </li>
-                    <li>
-                        <a href="#how">How We Do It</a>
-                    </li>
-                    <li>
-                        <a href="#who">Who We Are</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li style="display: none">
+            <a href="#home">Home</a>
+          </li>
+          <li>
+            <a href="#what">What We Do</a>
+
+            <div class="pointy"></div>
+          </li>
+          <li>
+            <a href="#how">How We Do It</a>
+
+            <div class="pointy"></div>
+          </li>
+          <li>
+            <a href="#who">Who We Are</a>
+
+            <div class="pointy"></div>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+
+            <div class="pointy"></div>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </div>
 
 <div class="container body">
-    <div id="home">
-        <p>We build cutting-edge<br><a href="#what">social, mobile and web apps</a></p>
+  <div id="home">
+    <p>We build cutting-edge<br><a href="#what">social, mobile and web apps</a></p>
 
-        <p>We know how to <br><a href="#how">deliver results</a>.</p>
+    <p>We know how to <br><a href="#how">deliver results</a>.</p>
 
-        <p><a href="#who">We</a> are <img src="assets/img/tapangi-gotham.png"></p>
+    <p><a href="#who">We</a> are <img src="assets/img/tapangi-gotham.png"></p>
+
+  </div>
+  <div id="what" class="section">
+    <h1>What header</h1>
+
+    <div class="row sub-section">
 
     </div>
-    <div id="what" style="background-color: red;"></div>
-    <div id="how" style="height: 2000px; background-color: green;"></div>
-    <div id="who" style="height: 2000px; background-color: yellow;"></div>
-    <div id="contact" style="height: 2000px; background-color: orange;"></div>
+
+  </div>
+  <div id="how" class="section">
+    <h1>How header</h1>
+
+    <div class="row sub-section">
+
+    </div>
+
+  </div>
+  <div id="who" class="section">
+
+    <div class="row">
+      <div class="span1">&nbsp;</div>
+      <div class="span6">
+        We are two people - a couple to be exact. We started Tapangi in the summer of 2011 because we thought
+        there
+        was a better way to do business. The word “Tapangi” means to help (in a rare Palauan language). And that
+        is
+        what we do.
+
+      </div>
+
+    </div>
+    <p><br></p>
+
+    <div class="row sub-section">
+      <div class="span1 side-label">Piotr</div>
+      <div class="span2 photo">
+        <img src="assets/img/piotr.jpg">
+
+        <div class="contact-info">
+
+        </div>
+      </div>
+      <div class="span5 description">
+        Piotr (aka Peter) is an experienced software professional with a passion for product development. He
+        possesses comprehensive skills in architecting, designing, building, launching and maintaining web based
+        applications. Recently, this means he’s been spending a lot of time with HTML5, JavaScript and Ruby on
+        Rails. Piotr’s resume also contains awesome Android and SproutCore implementations. In a past life, he
+        specialized in enterprise web based applications with Java technologies.
+
+        This broad experience with consulting has made Piotr into an effective technical coach and he enjoys
+        mentoring people through the software product development process. He evangelizes best practices (TDD,
+        BDD, CI, XP, etc) and advocates for open industry standards and open source software.
+
+        The non-geeky stuff: Piotr a Polish native with a love for languages and travel. He daydreams of opening
+        a scuba shop somewhere near the equator...
+
+
+      </div>
+    </div>
+
+  </div>
+  <div id="contact" class="section">
+    <div class="row sub-section heading">
+      <div class="span1 side-label">Connect</div>
+      <div class="icon-email"></div>
+      <div class="icon-twitter"></div>
+      <div class="span4 tweets"></div>
+    </div>
+    <div class="row sub-section">
+
+      <form id="contact-form" name="form1" class="wufoo  page" autocomplete="off" enctype="multipart/form-data"
+            method="post"
+            novalidate
+            action="https://tapangi.wufoo.com/forms/z7x3p9/#public">
+        <ul>
+          <li id="foli9" class="notranslate">
+            <label class="desc" id="title9" for="Field9">Name<span id="req_9" class="req">*</span></label>
+
+            <div class="field-body">
+              <input id="Field9" name="Field9" type="text" class="field text fn" value="" size="8" tabindex="1"
+                     required placeholder="First Name"/>
+
+            </div>
+            <div class="field-body">
+              <input id="Field10" name="Field10" type="text" class="field text ln" value="" size="14" tabindex="2"
+                     required placeholder="Last Name"/>
+            </div>
+          </li>
+          <li id="foli7" class="notranslate      ">
+            <label class="desc" id="title7" for="Field7">
+              Organization
+            </label>
+
+            <div class="field-body">
+              <input id="Field7" name="Field7" type="text" class="field text org" value=""
+                     maxlength="255"
+                     tabindex="3" onkeyup=""
+                     placeholder="Who do you work for? (optional)"
+                  >
+            </div>
+          </li>
+          <li id="foli2" class="notranslate">
+            <label class="desc" id="title2" for="Field2">
+              Email
+              <span id="req_2" class="req">*</span>
+            </label>
+
+            <div class="field-body">
+              <input id="Field2" name="Field2" type="email" spellcheck="false" class="field text email"
+                     value=""
+                     maxlength="255" tabindex="4" required
+                  placeholder="We won't share this with strangers">
+            </div>
+            <!--<p class="instruct" id="instruct2">-->
+              <!--<small>We won't share this with strangers.</small>-->
+            <!--</p>-->
+          </li>
+          <li id="foli1" class="notranslate">
+            <label class="desc" id="title1" for="Field1">
+              Message
+              <span id="req_1" class="req">*</span>
+            </label>
+            <div class="field-body">
+              <textarea id="Field1"
+                        name="Field1"
+                        class="field textarea message"
+                        spellcheck="true"
+                        rows="10" cols="50"
+                        tabindex="5"
+                        onkeyup=""
+                        required
+                        placeholder="How can we help?"
+                  ></textarea>
+
+            </div>
+            <!--<p class="instruct" id="instruct1">-->
+              <!--<small>Please tell us how we can help</small>-->
+            <!--</p>-->
+          </li>
+          <li class="buttons ">
+            <div class="submit">
+              <input id="saveForm" name="saveForm" class="btTxt" type="submit" value="Submit">
+            </div>
+          </li>
+
+          <li class="hide">
+            <label for="comment">Do Not Fill This Out</label>
+            <textarea name="comment" id="comment" rows="1" cols="1"></textarea>
+            <input type="hidden" id="idstamp" name="idstamp" value="NypCeYcf1nU1S/7nIwGJqu7+TRLcxmVpvmd86hRX7Qw=">
+          </li>
+        </ul>
+      </form>
+    </div>
+  </div>
 </div>
 
 <!-- Le javascript
@@ -93,6 +250,7 @@
 <script src="assets/js/jquery-1.8.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/tapangi.js"></script>
+<script src="assets/js/wufoo.js"></script>
 
 
 </body>

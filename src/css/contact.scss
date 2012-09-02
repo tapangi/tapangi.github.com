@@ -1,0 +1,94 @@
+#contact {
+  .heading {
+    margin-bottom: 5px;
+    > div {
+      vertical-align: top;
+
+    }
+  }
+
+  .icon-email {
+    background: url(../img/tapangi-icon-email.png) center center no-repeat;
+    background-size: contain;
+    width: 130px;
+    height: 85px;
+    margin-left: 5px;
+  }
+  .icon-twitter {
+    background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
+    background-size: contain;
+    width: 130px;
+    height: 85px;
+  }
+  .row {
+    &.sub-section {
+      > div {
+        display: inline-block;
+      }
+    }
+  }
+  form {
+    //resets
+    input, textarea {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -moz-border-radius: 0;
+    }
+    ul {
+      width: 600px;
+      li {
+
+        margin: 0px;
+        margin-bottom: 5px;
+
+        padding: 0;
+        label.desc {
+          vertical-align: top;
+          color: #0D78BF;
+          background-color: #E2E2E2;
+          margin: 0;
+          text-align: center;
+          padding-top: 33px;
+          padding-bottom: 33px;
+          width: 130px;
+          display: inline-block;
+          font-size: 15px;
+          line-height: 19px;
+        }
+        .field-body {
+          background-color: #E2E2E2;
+          display: inline-block;
+          padding: 14px;
+          margin: 0;
+          input {
+            height: 37px;
+            padding: 10px;
+          }
+          .fn, .ln {
+            width: 180px;
+
+          }
+          .org, .email, .message {
+            width: 412px;
+          }
+          .message {
+            padding: 10px;
+          }
+        }
+        .submit {
+          margin-left: 135px;
+          [ type = submit ] {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            width: 130px;
+            background-color: #dbff68;
+          }
+        }
+      }
+
+    }
+  }
+}
