@@ -24,21 +24,76 @@
     padding-top: 135px;
     font-size: 16px;
     line-height: 24px; }
-  .container .section .side-label {
-    width: 130px;
-    color: #0d78bf;
-    background-color: #e2e2e2;
-    margin: 0;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px; }
-  .container .section .sub-section {
-    border-top: 1px solid #aaadb3; } }
+  .container .section {
+    color: #666766; }
+    .container .section > h3 {
+      margin-left: 170px;
+      font-size: 22px; }
+    .container .section > p {
+      margin-left: 170px;
+      font-size: 14px; }
+    .container .section .side-label {
+      width: 130px;
+      color: #0d78bf;
+      background-color: #e2e2e2;
+      margin: 0;
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      line-height: 25px; }
+    .container .section .sub-section {
+      border-top: 1px solid #aaadb3; } }
 body {
   background: url(../img/tapangi-background.png) repeat;
   background-attachment: fixed;
   font-family: 'TitilliumText22LLight';
-  font-size: 26px; }
+  font-size: 26px;
+  color: #6e747e; }
+
+.sub-section {
+  margin-top: 20px; }
+  .sub-section .carousel {
+    height: 310px;
+    margin-left: 83px;
+    margin-right: 83px;
+    background: #e2e2e2; }
+    .sub-section .carousel .item {
+      margin-left: 245px; }
+      .sub-section .carousel .item h4 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 25px; }
+      .sub-section .carousel .item p {
+        font-size: 14px;
+        padding-top: 5px;
+        padding-right: 80px; }
+    .sub-section .carousel .carousel-control {
+      padding-top: 140px;
+      font-size: 120px;
+      vertical-align: middle;
+      top: 0px;
+      margin-top: 0px;
+      width: 80px;
+      bottom: 0px;
+      height: auto;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border: 0px;
+      background-color: #eaeaea;
+      opacity: 0.5;
+      filter: alpha(opacity=50); }
+      .sub-section .carousel .carousel-control.right {
+        right: -83px; }
+      .sub-section .carousel .carousel-control.left {
+        float: none;
+        left: -83px; }
+      .sub-section .carousel .carousel-control:hover {
+        color: #eaeaea;
+        background-color: #ffffff;
+        text-decoration: none;
+        opacity: 0.9;
+        filter: alpha(opacity=90); }
 
 .navbar {
   color: #5d636f; }
@@ -59,6 +114,7 @@ body {
     .navbar .navbar-inner .nav > li > a {
       font-family: 'TitilliumText22LLight';
       font-size: 26px;
+      color: #6e747e;
       color: #5d636f;
       display: block;
       background: #ffffff; }
@@ -92,7 +148,6 @@ body {
   .navbar-fixed-bottom .container {
     width: 940px; } }
 #home {
-  color: #6e747e;
   padding-top: 125px; }
   #home p {
     font-family: 'TitilliumText22LThin';
@@ -110,15 +165,21 @@ body {
       vertical-align: middle;
       margin-bottom: 35px; }
 
-#who .sub-section .description {
-  padding: 15px; }
-#who .sub-section .photo {
-  width: 335px;
-  height: 220px; }
-  #who .sub-section .photo.piotr {
-    background: url(../img/piotr.jpg) center center no-repeat; }
-  #who .sub-section .photo.liz {
-    background: url(../img/liz.jpg) center center no-repeat; }
+#who .sub-section {
+  padding-bottom: 30px; }
+  #who .sub-section > div {
+    display: inline-block;
+    vertical-align: top; }
+  #who .sub-section .description {
+    padding: 10px;
+    width: 470px; }
+  #who .sub-section .photo {
+    width: 335px;
+    height: 220px; }
+    #who .sub-section .photo.piotr {
+      background: url(../img/piotr.jpg) center center no-repeat; }
+    #who .sub-section .photo.liz {
+      background: url(../img/liz.jpg) center center no-repeat; }
 
 .info {
   display: inline-block;
@@ -1074,18 +1135,40 @@ form li.complex p.error {
 #contact .heading {
   margin-bottom: 5px; }
   #contact .heading > div {
-    vertical-align: top; }
+    vertical-align: top;
+    float: left; }
 #contact .icon-email {
   background: url(../img/tapangi-icon-email.png) center center no-repeat;
   background-size: contain;
   width: 130px;
   height: 85px;
-  margin-left: 5px; }
+  margin-left: 4px; }
 #contact .icon-twitter {
   background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
   background-size: contain;
   width: 130px;
-  height: 85px; }
+  height: 85px;
+  margin-left: 4px; }
+#contact .tweets {
+  padding: 1px;
+  height: 83px;
+  margin-left: 4px;
+  overflow: hidden;
+  background-color: #555b67;
+  color: #dbff68; }
+  #contact .tweets .feedcell {
+    height: 85px;
+    font-size: 13px; }
+    #contact .tweets .feedcell .feedtext {
+      width: 480px;
+      padding-top: 15px; }
+      #contact .tweets .feedcell .feedtext .user {
+        mergin-right: 3px; }
+    #contact .tweets .feedcell * {
+      float: left !important; }
+    #contact .tweets .feedcell .authorimg {
+      display: block;
+      padding: 18px; }
 #contact .row.sub-section > div {
   display: inline-block; }
 #contact iframe {

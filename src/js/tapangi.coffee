@@ -20,6 +20,7 @@ Tapangi.emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~
 Tapangi.onReady = () ->
   Tapangi.onResize()
   Tapangi.initializeForm()
+  gettwitterfeed("tweets", "@polishprince")
 
 Tapangi.onResize = () ->
   navbarHeight = parseInt $('.navbar .navbar-inner').css('height').substr(0, 3), 10
@@ -69,6 +70,15 @@ Tapangi.validateForm = ($contactForm) ->
 Tapangi.afterSubmitComplete = (data, status) ->
   console.log(status)
   console.log(data)
+
+
+renderfeedcell_tweets = (data) ->
+  console.log(data);
+  text=data.text
+  author=data.from_user
+  img=data.profile_image_url
+  html='<div class="feedcell"><a target=_blank href="http://twitter.com/'+author+'"><img class="authorimg" src="'+img+'"></a><span class="feedtext">'+text+'</span></div>'
+
 
 $(document).ready(Tapangi.onReady)
 $(window).resize(Tapangi.onResize)

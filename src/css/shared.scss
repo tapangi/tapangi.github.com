@@ -28,6 +28,7 @@
 @mixin default-font {
   font-family: 'TitilliumText22LLight';
   font-size: 26px;
+  color: #6e747e;
 }
 
 @media (min-width: 980px) {
@@ -47,6 +48,16 @@
       }
     }
     .section {
+      color: #666766;
+      > h3 {
+        margin-left: 170px;
+        font-size: 22px;
+      }
+
+      > p {
+        margin-left: 170px;
+        font-size: 14px;
+      }
       .side-label {
         width: 130px;
         color: #0d78bf;
@@ -55,6 +66,7 @@
         text-align: center;
         padding-top: 30px;
         padding-bottom: 30px;
+        line-height: 25px;
       }
       .sub-section {
         border-top: 1px solid #aaadb3;
@@ -68,5 +80,62 @@ body {
   background: url(../img/tapangi-background.png) repeat;
   background-attachment: fixed;
   @include default-font;
+
 }
 
+.sub-section {
+  margin-top: 20px;
+  .carousel {
+    height: 310px;
+    margin-left: 83px;
+    margin-right: 83px;
+    background: #e2e2e2;
+
+    .item {
+      margin-left: 245px;
+      h4 {
+        font-size: 22px;
+        font-weight: bold;
+        margin-top: 25px;
+      }
+      p {
+        font-size: 14px;
+        padding-top: 5px;
+        padding-right: 80px;
+      }
+    }
+
+    .carousel-control {
+      &.right {
+        right: -83px;
+      }
+      &.left {
+        float: none;
+        left: -83px;
+      }
+      padding-top: 140px;
+      font-size: 120px;
+      vertical-align: middle;
+      top: 0px;
+      margin-top: 0px;
+      width: 80px;
+      bottom: 0px;
+      height: auto;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      border: 0px;
+      background-color: #eaeaea;
+      opacity: 0.5;
+      filter: alpha(opacity = 50);
+      &:hover {
+        color: #eaeaea;
+        background-color: #ffffff;
+        text-decoration: none;
+        opacity: 0.9;
+        filter: alpha(opacity = 90);
+      }
+    }
+
+  }
+}

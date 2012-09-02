@@ -3,7 +3,7 @@
     margin-bottom: 5px;
     > div {
       vertical-align: top;
-
+        float:left;
     }
   }
 
@@ -12,13 +12,43 @@
     background-size: contain;
     width: 130px;
     height: 85px;
-    margin-left: 5px;
+    margin-left: 4px;
   }
   .icon-twitter {
     background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
     background-size: contain;
     width: 130px;
     height: 85px;
+    margin-left: 4px;
+  }
+  .tweets {
+    //min-width: 565px;
+    padding:1px;
+    height: 83px;
+    margin-left: 4px;
+    overflow: hidden;
+    background-color: #555b67;
+    color: #dbff68;
+    .feedcell {
+      height: 85px;
+
+      .feedtext {
+        width:480px;
+        padding-top:15px;
+        .user {
+          mergin-right:3px;
+        }
+      }
+      font-size: 13px;
+      * {
+        float: left !important;
+      }
+      .authorimg {
+        display: block;
+        padding:18px;
+      }
+
+    }
   }
   .row {
     &.sub-section {

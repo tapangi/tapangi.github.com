@@ -1,7 +1,13 @@
 #who {
   .sub-section {
+    padding-bottom:30px;
+    > div {
+      display: inline-block;
+      vertical-align: top;
+    }
     .description {
-      padding: 15px;
+      padding: 10px;
+      width:470px;
     }
     .photo {
       width:335px;
@@ -13,5 +19,6 @@
         background: url(../img/liz.jpg) center center no-repeat;
       }
     }
+
   }
 }
