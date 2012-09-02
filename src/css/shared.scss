@@ -35,10 +35,33 @@
     //padding-top: 100px; /* 60px to make the container go all the way to the bottom of the topbar */
   }
 
-  .container.body > div {
-    padding-top: 100px;
+  .container {
+    &.body > div {
+      padding-top: 135px;
+      @include default-font;
+      font-size: 16px;
+      line-height: 24px;
 
+      .intro {
+
+      }
+    }
+    .section {
+      .side-label {
+        width: 130px;
+        color: #0d78bf;
+        background-color: #e2e2e2;
+        margin: 0;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+      .sub-section {
+        border-top: 1px solid #aaadb3;
+      }
+    }
   }
+
 }
 
 body {
