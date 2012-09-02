@@ -3,5 +3,15 @@
     .description {
       padding: 15px;
     }
+    .photo {
+      width:335px;
+      height:220px;
+      &.piotr {
+        background: url(../img/piotr.jpg) center center no-repeat;
+      }
+      &.liz {
+        background: url(../img/liz.jpg) center center no-repeat;
+      }
+    }
   }
 }
