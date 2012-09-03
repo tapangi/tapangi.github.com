@@ -64,6 +64,10 @@ $navbar-height-collapse: 40px;
 @media (max-width: 767px) {
 
   .navbar {
+    &.navbar-fixed-top {
+      position: static;
+      //margin-bottom: 18px;
+    }
     .navbar-inner {
       background-color: #ffffff;
       .container {

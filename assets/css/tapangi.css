@@ -148,6 +148,8 @@ p {
         color: #1a51aa; }
 
 @media (max-width: 767px) {
+  .navbar.navbar-fixed-top {
+    position: static; }
   .navbar .navbar-inner {
     background-color: #ffffff; }
     .navbar .navbar-inner .container {
