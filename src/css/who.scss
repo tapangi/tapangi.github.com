@@ -1,22 +1,25 @@
 #who {
   .sub-section {
-    padding-bottom:30px;
+    padding-bottom: 30px;
     > div {
       display: inline-block;
       vertical-align: top;
     }
     .description {
       padding: 10px;
-      width:470px;
+      width: 445px;
     }
     .photo {
-      width:335px;
-      height:220px;
+      width: 335px;
+      height: 220px;
+      background-size: cover;
+      background-positon: center center;
+      background-repeat: no-repeat;
       &.piotr {
-        background: url(../img/piotr.jpg) center center no-repeat;
+        background-image: url(../img/piotr.jpg);
       }
       &.liz {
-        background: url(../img/liz.jpg) center center no-repeat;
+        background-image: url(../img/liz.jpg);
       }
     }
 

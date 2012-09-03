@@ -19,30 +19,36 @@
   font-weight: normal;
   font-style: normal; }
 
-@media (min-width: 980px) {
-  .container.body > div {
-    padding-top: 135px;
-    font-size: 16px;
-    line-height: 24px; }
-  .container .section {
-    color: #666766; }
-    .container .section > h3 {
-      margin-left: 170px;
-      font-size: 22px; }
-    .container .section > p {
-      margin-left: 170px;
-      font-size: 14px; }
-    .container .section .side-label {
-      width: 130px;
-      color: #0d78bf;
-      background-color: #e2e2e2;
-      margin: 0;
-      text-align: center;
-      padding-top: 30px;
-      padding-bottom: 30px;
-      line-height: 25px; }
-    .container .section .sub-section {
-      border-top: 1px solid #aaadb3; } }
+.container.body > div {
+  padding-top: 145px;
+  font-size: 16px;
+  line-height: 24px; }
+.container .section {
+  color: #666766; }
+  .container .section > h3 {
+    margin-left: 170px;
+    margin-right: 100px;
+    font-size: 22px;
+    margin-bottom: 10px; }
+  .container .section > p {
+    margin-left: 170px;
+    margin-right: 100px;
+    font-size: 14px; }
+  .container .section .side-label {
+    width: 130px;
+    color: #0d78bf;
+    background-color: #e2e2e2;
+    margin: 0;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    line-height: 25px; }
+  .container .section .sub-section {
+    border-top: 1px solid #aaadb3; }
+
+.row {
+  margin-left: 0; }
+
 body {
   background: url(../img/tapangi-background.png) repeat;
   background-attachment: fixed;
@@ -53,7 +59,7 @@ body {
 .sub-section {
   margin-top: 20px; }
   .sub-section .carousel {
-    height: 310px;
+    height: 280px;
     margin-left: 83px;
     margin-right: 83px;
     background: #e2e2e2; }
@@ -68,7 +74,7 @@ body {
         padding-top: 5px;
         padding-right: 80px; }
     .sub-section .carousel .carousel-control {
-      padding-top: 140px;
+      padding-top: 125px;
       font-size: 120px;
       vertical-align: middle;
       top: 0px;
@@ -81,6 +87,7 @@ body {
       -moz-border-radius: 0px;
       border: 0px;
       background-color: #eaeaea;
+      color: #666766;
       opacity: 0.5;
       filter: alpha(opacity=50); }
       .sub-section .carousel .carousel-control.right {
@@ -104,49 +111,33 @@ body {
     .navbar .navbar-inner .container {
       vertical-align: middle; }
     .navbar .navbar-inner a.logo {
-      float: left; }
-    .navbar .navbar-inner .nav > li .pointy {
-      width: 20px;
-      height: 20px;
-      margin-top: -10px;
-      margin-left: 50%;
-      margin-right: 50%; }
-    .navbar .navbar-inner .nav > li > a {
-      font-family: 'TitilliumText22LLight';
-      font-size: 26px;
-      color: #6e747e;
-      color: #5d636f;
-      display: block;
-      background: #ffffff; }
-    .navbar .navbar-inner .nav > li.active > a {
-      background: none;
-      color: #1a51aa; }
+      float: left;
+      width: 95px;
+      height: 135px;
+      background: url(../img/tapangi-logo.png) no-repeat; }
+    .navbar .navbar-inner .nav > li {
+      height: 100px; }
+      .navbar .navbar-inner .nav > li .pointy {
+        width: 20px;
+        height: 20px;
+        margin-top: -10px;
+        margin-left: 50%;
+        margin-right: 50%; }
+      .navbar .navbar-inner .nav > li > a {
+        font-family: 'TitilliumText22LLight';
+        font-size: 26px;
+        color: #6e747e;
+        color: #5d636f;
+        display: block;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        padding-left: 30px;
+        padding-right: 30px;
+        background: #ffffff; }
+      .navbar .navbar-inner .nav > li.active > a {
+        background: none;
+        color: #1a51aa; }
 
-@media (max-width: 979px) {
-  .navbar .navbar-inner {
-    height: 40px; }
-  .navbar a.logo {
-    background: url(../img/tapangi-logo-40.png) no-repeat;
-    width: 38px;
-    height: 54px; } }
-@media (min-width: 980px) {
-  .navbar .navbar-inner a.logo {
-    float: left;
-    width: 95px;
-    height: 135px;
-    background: url(../img/tapangi-logo.png) no-repeat; }
-  .navbar .navbar-inner .nav > li {
-    height: 100px; }
-    .navbar .navbar-inner .nav > li > a {
-      padding-top: 40px;
-      padding-bottom: 40px;
-      padding-left: 30px;
-      padding-right: 30px; } }
-@media (min-width: 1200px) {
-  .container,
-  .navbar-fixed-top .container,
-  .navbar-fixed-bottom .container {
-    width: 940px; } }
 #home {
   padding-top: 125px; }
   #home p {
@@ -172,14 +163,17 @@ body {
     vertical-align: top; }
   #who .sub-section .description {
     padding: 10px;
-    width: 470px; }
+    width: 445px; }
   #who .sub-section .photo {
     width: 335px;
-    height: 220px; }
+    height: 220px;
+    background-size: cover;
+    background-positon: center center;
+    background-repeat: no-repeat; }
     #who .sub-section .photo.piotr {
-      background: url(../img/piotr.jpg) center center no-repeat; }
+      background-image: url(../img/piotr.jpg); }
     #who .sub-section .photo.liz {
-      background: url(../img/liz.jpg) center center no-repeat; }
+      background-image: url(../img/liz.jpg); }
 
 .info {
   display: inline-block;
@@ -1139,13 +1133,11 @@ form li.complex p.error {
     float: left; }
 #contact .icon-email {
   background: url(../img/tapangi-icon-email.png) center center no-repeat;
-  background-size: contain;
   width: 130px;
   height: 85px;
   margin-left: 4px; }
 #contact .icon-twitter {
   background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
-  background-size: contain;
   width: 130px;
   height: 85px;
   margin-left: 4px; }
@@ -1160,7 +1152,7 @@ form li.complex p.error {
     height: 85px;
     font-size: 13px; }
     #contact .tweets .feedcell .feedtext {
-      width: 480px;
+      width: 450px;
       padding-top: 15px; }
       #contact .tweets .feedcell .feedtext .user {
         mergin-right: 3px; }
@@ -1222,3 +1214,46 @@ form li.complex p.error {
         padding-bottom: 30px;
         width: 130px;
         background-color: #dbff68; }
+
+@media (max-width: 979px) {
+  .navbar .navbar-inner .container {
+    width: 740px; }
+  .navbar .navbar-inner .nav > li > a {
+    padding-left: 15px;
+    padding-right: 15px; }
+  .navbar a.logo {
+    background: url(../img/tapangi-logo-40.png) no-repeat;
+    width: 38px;
+    height: 54px; }
+
+  .container {
+    width: 740px; }
+    .container #home p {
+      margin-left: 110px; }
+    .container .section > h3, .container .section > p {
+      margin-left: 110px;
+      margin-right: 110px; }
+    .container .section .sub-section .carousel {
+      margin-left: 105px;
+      margin-right: 105px; }
+      .container .section .sub-section .carousel .item {
+        margin-left: 245px; }
+        .container .section .sub-section .carousel .item p {
+          padding-right: 25px; }
+    .container #who p {
+      margin-left: 135px; }
+    .container #who .sub-section .description {
+      width: 330px; }
+    .container #who .sub-section .photo {
+      width: 250px;
+      height: 164px; }
+    .container #contact .icon-email {
+      width: 100px; }
+    .container #contact .icon-twitter {
+      width: 100px; }
+    .container #contact .tweets .feedcell .feedtext {
+      width: 310px; }
+    .container #what .sub-section .carousel {
+      height: 310px; }
+      .container #what .sub-section .carousel .carousel-control {
+        padding-top: 140px; } }

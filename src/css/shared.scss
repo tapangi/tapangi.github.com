@@ -31,49 +31,48 @@
   color: #6e747e;
 }
 
-@media (min-width: 980px) {
-  body {
+.container {
+  &.body > div {
+    padding-top: 145px;
 
-  }
+    font-size: 16px;
+    line-height: 24px;
 
-  .container {
-    &.body > div {
-      padding-top: 135px;
+    .intro {
 
-      font-size: 16px;
-      line-height: 24px;
-
-      .intro {
-
-      }
-    }
-    .section {
-      color: #666766;
-      > h3 {
-        margin-left: 170px;
-        font-size: 22px;
-      }
-
-      > p {
-        margin-left: 170px;
-        font-size: 14px;
-      }
-      .side-label {
-        width: 130px;
-        color: #0d78bf;
-        background-color: #e2e2e2;
-        margin: 0;
-        text-align: center;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        line-height: 25px;
-      }
-      .sub-section {
-        border-top: 1px solid #aaadb3;
-      }
     }
   }
+  .section {
+    color: #666766;
+    > h3 {
+      margin-left: 170px;
+      margin-right: 100px;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
 
+    > p {
+      margin-left: 170px;
+      margin-right: 100px;
+      font-size: 14px;
+    }
+    .side-label {
+      width: 130px;
+      color: #0d78bf;
+      background-color: #e2e2e2;
+      margin: 0;
+      text-align: center;
+      padding-top: 30px;
+      padding-bottom: 30px;
+      line-height: 25px;
+    }
+    .sub-section {
+      border-top: 1px solid #aaadb3;
+    }
+  }
+}
+.row {
+  margin-left: 0;
 }
 
 body {
@@ -86,7 +85,7 @@ body {
 .sub-section {
   margin-top: 20px;
   .carousel {
-    height: 310px;
+    height: 280px;
     margin-left: 83px;
     margin-right: 83px;
     background: #e2e2e2;
@@ -113,7 +112,7 @@ body {
         float: none;
         left: -83px;
       }
-      padding-top: 140px;
+      padding-top: 125px;
       font-size: 120px;
       vertical-align: middle;
       top: 0px;
@@ -126,6 +125,7 @@ body {
       -moz-border-radius: 0px;
       border: 0px;
       background-color: #eaeaea;
+      color: #666766;
       opacity: 0.5;
       filter: alpha(opacity = 50);
       &:hover {
@@ -139,3 +139,5 @@ body {
 
   }
 }
+
+

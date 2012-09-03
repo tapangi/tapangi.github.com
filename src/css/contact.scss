@@ -9,14 +9,14 @@
 
   .icon-email {
     background: url(../img/tapangi-icon-email.png) center center no-repeat;
-    background-size: contain;
+  //  background-size: contain;
     width: 130px;
     height: 85px;
     margin-left: 4px;
   }
   .icon-twitter {
     background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
-    background-size: contain;
+ //    background-size: contain;
     width: 130px;
     height: 85px;
     margin-left: 4px;
@@ -33,7 +33,7 @@
       height: 85px;
 
       .feedtext {
-        width:480px;
+        width:450px;
         padding-top:15px;
         .user {
           mergin-right:3px;

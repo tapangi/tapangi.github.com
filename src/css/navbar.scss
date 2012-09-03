@@ -6,7 +6,6 @@ $navbar-height-collapse: 40px;
 
   color: $navbar-text-color;
 
-
   .navbar-inner {
 
     background-image: none;
@@ -19,13 +18,15 @@ $navbar-height-collapse: 40px;
 
     a.logo {
       float: left;
-
+      width: 95px;
+      height: 135px;
+      background: url(../img/tapangi-logo.png) no-repeat;
     }
-
     .nav {
       > li {
+        height: $navbar-height;
         .pointy {
-          width:20px;
+          width: 20px;
           height: 20px;
           margin-top: -10px;
           margin-left: 50%;
@@ -35,7 +36,10 @@ $navbar-height-collapse: 40px;
           @include default-font;
           color: $navbar-text-color;
           display: block;
-
+          padding-top: 40px;
+          padding-bottom: 40px;
+          padding-left: 30px;
+          padding-right: 30px;
           background: #ffffff;
         }
         &.active {
@@ -49,54 +53,6 @@ $navbar-height-collapse: 40px;
 
     }
   }
+
 }
 
-@media (max-width: 979px) {
-  .navbar {
-    .navbar-inner {
-      height: $navbar-height-collapse;
-    }
-    a.logo {
-      background: url(../img/tapangi-logo-40.png) no-repeat;
-      width: 38px;
-      height: 54px;
-    }
-  }
-}
-
-@media (min-width: 980px) {
-  .navbar {
-
-    .navbar-inner {
-
-
-      a.logo {
-        float: left;
-        width: 95px;
-        height: 135px;
-        background: url(../img/tapangi-logo.png) no-repeat;
-      }
-      .nav {
-        > li {
-          height: $navbar-height;
-          > a {
-            padding-top: 40px;
-            padding-bottom: 40px;
-            padding-left: 30px;
-            padding-right: 30px;
-
-          }
-        }
-
-      }
-    }
-  }
-}
-
-@media (min-width: 1200px) {
-  .container,
-  .navbar-fixed-top .container,
-  .navbar-fixed-bottom .container {
-    width: 940px;
-  }
-}
