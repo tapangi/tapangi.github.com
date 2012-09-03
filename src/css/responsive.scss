@@ -92,5 +92,90 @@
   }
 }
 
+@media (max-width: 480px) {
+  .nav-collapse {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+
+  .container {
+    width: auto;
+    #home {
+      p {
+        margin-left: 80px;
+        margin-right: 20px;
+      }
+    }
+    .section {
+      > h3, > p {
+        margin-left: 110px;
+        margin-right: 110px;
+      }
+      .sub-section {
+        .carousel {
+          margin-left: 105px;
+          margin-right: 105px;
+          .item {
+            margin-left: 245px;
+            p {
+              padding-right: 25px;
+            }
+          }
+        }
+      }
+    }
+    #who {
+      p {
+        margin-left: 135px;
+      }
+
+      .sub-section {
+        .description {
+          width: 330px;
+        }
+        .photo {
+          width: 250px;
+          height: 164px;
+        }
+
+      }
+    }
+    #contact {
+      .icon-email {
+        width: 100px;
+      }
+      .icon-twitter {
+        width: 100px;
+      }
+      .tweets {
+        .feedcell {
+          .feedtext {
+            width: 310px;
+
+          }
+        }
+      }
+    }
+    #what {
+      .sub-section {
+        .carousel {
+          height: 310px;
+          .carousel-control {
+            padding-top: 140px;
+          }
+        }
+      }
+
+    }
+  }
+
+
+
+
+
+
+}
 
 

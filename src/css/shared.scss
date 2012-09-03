@@ -45,15 +45,15 @@
   .section {
     color: #666766;
     > h3 {
-      margin-left: 170px;
-      margin-right: 100px;
+      margin-left: 110px;
+      margin-right: 110px;
       font-size: 22px;
       margin-bottom: 10px;
     }
 
     > p {
-      margin-left: 170px;
-      margin-right: 100px;
+      margin-left: 110px;
+      margin-right: 110px;
       font-size: 14px;
     }
     .side-label {
@@ -81,13 +81,16 @@ body {
   @include default-font;
 
 }
+p {
+  @include default-font;
+}
 
 .sub-section {
   margin-top: 20px;
   .carousel {
     height: 280px;
-    margin-left: 83px;
-    margin-right: 83px;
+    margin-left: 105px;
+    margin-right: 105px;
     background: #e2e2e2;
 
     .item {
