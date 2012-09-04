@@ -34,7 +34,7 @@ Tapangi.onReady = function() {
 
 Tapangi.onResize = function() {
   var navbarHeight, sectionHeight;
-  navbarHeight = parseInt($('.navbar .navbar-inner').css('height').substr(0, 3), 10);
+  navbarHeight = window.innerWidth > 979 ? parseInt($('.navbar .navbar-inner').css('height').substr(0, 3), 10) : 0;
   sectionHeight = window.innerHeight - navbarHeight;
   $(".container.body > div").css("min-height", sectionHeight);
   return $('[data-spy="scroll"]').each(function() {
@@ -104,4 +104,11 @@ $(window).resize(Tapangi.onResize);
 $("iframe").load(function(e) {
   $("#thanks").modal("show");
   return $("#contact-form")[0].reset();
+});
+
+$(".btn-navbar").bind('click', function() {
+  $(this).toggleClass("active");
+  return $(".nav-collapse li > a").bind("click", function() {
+    return $(".btn-navbar").trigger('click');
+  });
 });

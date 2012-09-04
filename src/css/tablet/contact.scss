@@ -1,0 +1,21 @@
+@media (max-width: 767px) {
+  .container {
+    #contact {
+      .icon-email {
+        width: 100px;
+      }
+      .icon-twitter {
+        width: 100px;
+      }
+      .tweets {
+        .feedcell {
+          .feedtext {
+            width: 310px;
+
+          }
+        }
+      }
+    }
+  }
+}
+

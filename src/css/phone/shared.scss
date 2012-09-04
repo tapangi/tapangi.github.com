@@ -1,4 +1,4 @@
-@media (max-width: 979px) {
+@media (max-width: 979px) and (min-width: 768px) {
   .navbar {
     .navbar-inner {
       .container {
@@ -22,13 +22,20 @@
   }
 
   .container {
+    &.body {
+      > div {
+        padding-top: 20px;
+      }
+    }
     width: 740px;
     #home {
+      padding-top: 0;
       p {
         margin-left: 110px;
       }
     }
     .section {
+
       > h3, > p {
         margin-left: 110px;
         margin-right: 110px;
@@ -102,10 +109,18 @@
 
   .container {
     width: auto;
+    &.body {
+
+      > div {
+        padding-top: 20px;
+      }
+    }
     #home {
+      padding-top: 0;
       p {
-        margin-left: 80px;
+        margin-left: 40px;
         margin-right: 20px;
+        padding-top: 10px;
       }
     }
     .section {
@@ -170,11 +185,6 @@
 
     }
   }
-
-
-
-
-
 
 }
 

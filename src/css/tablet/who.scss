@@ -1,0 +1,21 @@
+@media (max-width: 767px) {
+  .container {
+    #who {
+      p {
+        margin-left: 135px;
+      }
+
+      .sub-section {
+        .description {
+          width: 330px;
+        }
+        .photo {
+          width: 250px;
+          height: 164px;
+        }
+
+      }
+    }
+  }
+}
+

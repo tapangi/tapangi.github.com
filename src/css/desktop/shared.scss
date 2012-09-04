@@ -81,7 +81,7 @@ body {
   @include default-font;
 
 }
-p {
+p,input, button, select, textarea  {
   @include default-font;
 }
 

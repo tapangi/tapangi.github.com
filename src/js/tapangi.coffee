@@ -13,7 +13,7 @@ $.fn.serializeObject = () ->
       o[this.name] = this.value || ''
   return o
 
-console = window.console || {log:(->)}
+console = window.console || {log: (->)}
 Tapangi = window.Tapangi = {}
 Tapangi.emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
 
@@ -23,7 +23,7 @@ Tapangi.onReady = () ->
   gettwitterfeed("tweets", "@polishprince")
 
 Tapangi.onResize = () ->
-  navbarHeight = parseInt $('.navbar .navbar-inner').css('height').substr(0, 3), 10
+  navbarHeight = if window.innerWidth > 979 then parseInt $('.navbar .navbar-inner').css('height').substr(0, 3), 10 else 0
   sectionHeight = window.innerHeight - navbarHeight
   $(".container.body > div").css("min-height", sectionHeight)
   $('[data-spy="scroll"]').each(() ->
@@ -37,14 +37,15 @@ Tapangi.initializeForm = () ->
   $contactForm.find("[type=submit]").prop('disabled', true)
   $fields = $contactForm.find("input, textarea")
   $fields.bind("change", (event) ->
-   Tapangi.validateForm($contactForm)
+    Tapangi.validateForm($contactForm)
   )
   $contactForm.bind 'submit', (e) ->
     e.preventDefault()
     if Tapangi.validateForm($contactForm)
       #values = $contactForm.serializeObject()
       #$.post($contactForm.prop('action'),values, Tapangi.afterSubmitComplete,"script")
-      $contactForm[0].submit();
+      $contactForm[0].submit()
+      ;
     false
   false
 
@@ -58,7 +59,7 @@ Tapangi.validateForm = ($contactForm) ->
         validationErrors.push key
 
     if key == "Field2" and !Tapangi.emailRegex.test values[key]
-        validationErrors.push key
+      validationErrors.push key
 
 
   if validationErrors.length == 0
@@ -73,11 +74,12 @@ Tapangi.afterSubmitComplete = (data, status) ->
 
 
 renderfeedcell_tweets = (data) ->
-  console.log(data);
+  console.log(data)
+  ;
   text=data.text
   author=data.from_user
   img=data.profile_image_url
-  html='<div class="feedcell"><a target=_blank href="http://twitter.com/'+author+'"><img class="authorimg" src="'+img+'"></a><span class="feedtext">'+text+'</span></div>'
+  html='<div class="feedcell"><a target=_blank href="http://twitter.com/' + author + '"><img class="authorimg" src="' + img + '"></a><span class="feedtext">' + text + '</span></div>'
 
 
 $(document).ready(Tapangi.onReady)
@@ -86,3 +88,7 @@ $("iframe").load (e) ->
   $("#thanks").modal("show")
   $("#contact-form")[0].reset()
 
+$(".btn-navbar").bind 'click', () ->
+  $(this).toggleClass("active")
+  $(".nav-collapse li > a").bind "click", () ->
+    $(".btn-navbar").trigger('click')
