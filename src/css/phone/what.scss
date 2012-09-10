@@ -1,11 +1,19 @@
 @media (max-width: 767px) {
   .container {
-    #home {
-      padding-top: 0;
-      p {
-        margin-left: 40px;
-        margin-right: 20px;
-        padding-top: 10px;
+    #what {
+      .sub-section {
+        .carousel {
+          height: 450px;
+          .carousel-inner {
+            .item {
+              margin-top: 200px;
+            }
+
+          }
+          .carousel-control {
+            padding-top: 140px;
+          }
+        }
       }
     }
   }

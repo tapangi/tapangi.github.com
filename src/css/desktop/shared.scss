@@ -81,7 +81,7 @@ body {
   @include default-font;
 
 }
-p,input, button, select, textarea  {
+p, button {
   @include default-font;
 }
 
@@ -94,11 +94,12 @@ p,input, button, select, textarea  {
     background: #e2e2e2;
 
     .item {
+      margin-top: 25px;
       margin-left: 245px;
       h4 {
         font-size: 22px;
         font-weight: bold;
-        margin-top: 25px;
+
       }
       p {
         font-size: 14px;

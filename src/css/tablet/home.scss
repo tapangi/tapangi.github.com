@@ -1,11 +1,14 @@
-@media (max-width: 767px) {
+@media (max-width: 979px) and (min-width: 768px) {
   .container {
-    #home {
-      padding-top: 0;
-      p {
-        margin-left: 40px;
-        margin-right: 20px;
-        padding-top: 10px;
+    &.body {
+
+      //this is weird, but necessary for the navbar to work right
+      #home {
+        padding-top: 125px;
+        margin-top: -125px;
+        p {
+          margin-left: 110px;
+        }
       }
     }
   }

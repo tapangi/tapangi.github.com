@@ -20,6 +20,8 @@ Tapangi.emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~
 Tapangi.onReady = () ->
   Tapangi.onResize()
   Tapangi.initializeForm()
+  Tapangi.initializeWhatDisc()
+
   gettwitterfeed("tweets", "@polishprince")
 
 Tapangi.onResize = () ->
@@ -74,8 +76,6 @@ Tapangi.afterSubmitComplete = (data, status) ->
 
 
 renderfeedcell_tweets = (data) ->
-  console.log(data)
-  ;
   text=data.text
   author=data.from_user
   img=data.profile_image_url
@@ -92,3 +92,78 @@ $(".btn-navbar").bind 'click', () ->
   $(this).toggleClass("active")
   $(".nav-collapse li > a").bind "click", () ->
     $(".btn-navbar").trigger('click')
+
+
+
+
+
+Tapangi.initializeWhatDisc = ()->
+  discWidth = $("#what-disc").width()
+  discHeight = $("#what-disc").height()
+  Tapangi.whatDiscCenterX = Math.floor(discWidth / 2) + 1
+  Tapangi.whatDiscCenterY = Math.floor(discHeight / 2) + 1
+  $("#what-disc").mousemove (e)->
+
+    mouseX = e.offsetX
+    mouseY = e.offsetY
+
+    diffX = (mouseX - Tapangi.whatDiscCenterX)
+    diffY = (mouseY - Tapangi.whatDiscCenterY)
+
+    opposite = Math.abs(diffY)
+    adjacent = Math.abs(diffX)
+    radius = Math.sqrt((opposite * opposite) + (adjacent * adjacent))
+
+    minRadius = 22
+    maxRadius = 110
+
+    if radius > minRadius and radius <= maxRadius
+      tangent = opposite / adjacent
+      if diffX != 0
+        angle = Math.atan(tangent) * 180 / Math.PI
+        if diffY < 0
+          if diffX < 0
+            angle = 180 - angle
+        else
+          if diffX < 0
+            angle = angle + 180
+          else
+            angle = 360 - angle
+      else
+        if diffY > 0
+          angle = 270
+        else
+          angle = 90
+
+      ## adjust based on the rotation of the star
+
+      ## decide:
+      if angle < 60 || angle > 300
+        if !$(this).hasClass("cloud")
+          $(this).removeClass("social mobile").addClass("cloud")
+      else if angle > 60 && angle < 180
+        if !$(this).hasClass("social")
+          $(this).removeClass("cloud mobile").addClass("social")
+      else
+        if !$(this).hasClass("mobile")
+          $(this).removeClass("cloud social").addClass("mobile")
+    else
+      $(this).removeClass("cloud social mobile")
+
+  $("#what-disc").mouseout (e)->
+    $(this).removeClass("cloud social mobile down")
+
+  $("#what-disc").mousedown (e)->
+    $(this).addClass("down")
+
+  $("#what-disc").mouseup (e)->
+    $(this).removeClass("down")
+
+
+
+Tapangi.initializeHowDisc = ()->
+  discWidth = $("#how-disc").width()
+  discHeight = $("#how-disc").height()
+  Tapangi.howDiscCenterX = Math.floor(discWidth / 2) + 1
+  Tapangi.howDiscCenterY = Math.floor(discHeight / 2) + 1
+

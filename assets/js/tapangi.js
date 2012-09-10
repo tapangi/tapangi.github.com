@@ -29,6 +29,7 @@ Tapangi.emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~
 Tapangi.onReady = function() {
   Tapangi.onResize();
   Tapangi.initializeForm();
+  Tapangi.initializeWhatDisc();
   return gettwitterfeed("tweets", "@polishprince");
 };
 
@@ -90,7 +91,6 @@ Tapangi.afterSubmitComplete = function(data, status) {
 
 renderfeedcell_tweets = function(data) {
   var author, html, img, text;
-  console.log(data);
   text = data.text;
   author = data.from_user;
   img = data.profile_image_url;
@@ -112,3 +112,78 @@ $(".btn-navbar").bind('click', function() {
     return $(".btn-navbar").trigger('click');
   });
 });
+
+Tapangi.initializeWhatDisc = function() {
+  var discHeight, discWidth;
+  discWidth = $("#what-disc").width();
+  discHeight = $("#what-disc").height();
+  Tapangi.whatDiscCenterX = Math.floor(discWidth / 2) + 1;
+  Tapangi.whatDiscCenterY = Math.floor(discHeight / 2) + 1;
+  $("#what-disc").mousemove(function(e) {
+    var adjacent, angle, diffX, diffY, maxRadius, minRadius, mouseX, mouseY, opposite, radius, tangent;
+    mouseX = e.offsetX;
+    mouseY = e.offsetY;
+    diffX = mouseX - Tapangi.whatDiscCenterX;
+    diffY = mouseY - Tapangi.whatDiscCenterY;
+    opposite = Math.abs(diffY);
+    adjacent = Math.abs(diffX);
+    radius = Math.sqrt((opposite * opposite) + (adjacent * adjacent));
+    minRadius = 22;
+    maxRadius = 110;
+    if (radius > minRadius && radius <= maxRadius) {
+      tangent = opposite / adjacent;
+      if (diffX !== 0) {
+        angle = Math.atan(tangent) * 180 / Math.PI;
+        if (diffY < 0) {
+          if (diffX < 0) {
+            angle = 180 - angle;
+          }
+        } else {
+          if (diffX < 0) {
+            angle = angle + 180;
+          } else {
+            angle = 360 - angle;
+          }
+        }
+      } else {
+        if (diffY > 0) {
+          angle = 270;
+        } else {
+          angle = 90;
+        }
+      }
+      if (angle < 60 || angle > 300) {
+        if (!$(this).hasClass("cloud")) {
+          return $(this).removeClass("social mobile").addClass("cloud");
+        }
+      } else if (angle > 60 && angle < 180) {
+        if (!$(this).hasClass("social")) {
+          return $(this).removeClass("cloud mobile").addClass("social");
+        }
+      } else {
+        if (!$(this).hasClass("mobile")) {
+          return $(this).removeClass("cloud social").addClass("mobile");
+        }
+      }
+    } else {
+      return $(this).removeClass("cloud social mobile");
+    }
+  });
+  $("#what-disc").mouseout(function(e) {
+    return $(this).removeClass("cloud social mobile down");
+  });
+  $("#what-disc").mousedown(function(e) {
+    return $(this).addClass("down");
+  });
+  return $("#what-disc").mouseup(function(e) {
+    return $(this).removeClass("down");
+  });
+};
+
+Tapangi.initializeHowDisc = function() {
+  var discHeight, discWidth;
+  discWidth = $("#how-disc").width();
+  discHeight = $("#how-disc").height();
+  Tapangi.howDiscCenterX = Math.floor(discWidth / 2) + 1;
+  return Tapangi.howDiscCenterY = Math.floor(discHeight / 2) + 1;
+};

@@ -1,206 +1,25 @@
-$navbar-text-color: #5d636f;
-$navbar-height: 100px;
-$navbar-height-collapse: 40px;
-
-.navbar {
-
-  color: $navbar-text-color;
-  .btn-navbar {
-    color: #e5e6e8;
-    background: none;
-
-    padding: 0px;
-    margin: 0px;
-    border: 0;
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    -moz-border-radius: 0;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin-right: 5px;
-    &:hover {
-      background: none;
-    }
-    > span {
-      vertical-align: top;
-      display: inline-block;
-
-      font-size: 22px;
-    }
-    .nav-text {
-      padding-top: 18px;
-    }
-    .icon {
-      background: url(../img/tapangi-navbar-button.png) center center no-repeat;
-      width: 50px;
-      height: 50px;
-
-    }
-    &.active {
-      background: none;
-      .icon {
-        background: url(../img/tapangi-navbar-button-active.png) center center no-repeat;
-      }
-    }
-
-  }
-  .navbar-inner {
-
-    background-image: none;
-    background-color: #ffffff;
-    height: $navbar-height;
-
-    .container {
-      vertical-align: middle;
-
-    }
-
-    a.logo {
-      float: left;
-      width: 95px;
-      height: 135px;
-      background: url(../img/tapangi-logo.png) no-repeat;
-    }
-    .nav {
-      ul {
-        -webkit-margin-before: 0px;
-        -webkit-margin-after: 0px;
-        -webkit-margin-start: 0px;
-        -webkit-margin-end: 0px;
-        -webkit-padding-start: 0px;
-      }
-      > li {
-        height: $navbar-height;
-        .pointy {
-          width: 20px;
-          height: 20px;
-          margin-top: -10px;
-          margin-left: 50%;
-          margin-right: 50%;
-        }
-        > a {
-          @include default-font;
-          color: $navbar-text-color;
-          display: block;
-          padding-top: 40px;
-          padding-bottom: 40px;
-          padding-left: 30px;
-          padding-right: 30px;
-          background: #ffffff;
-        }
-        &.active {
-          > a {
-            background: #ffffff;
-            color: #1a51aa;
-          }
-
-        }
-      }
-
-    }
-  }
-
-}
-
 @media (max-width: 979px) and (min-width: 768px) {
   .navbar {
     &.navbar-fixed-top {
       position: static;
-      //margin-bottom: 18px;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-
-  .navbar {
-    &.navbar-fixed-top {
-      position: static;
-      //margin-bottom: 18px;
-    }
-    .btn-navbar {
-      display: inline-block;
     }
     .navbar-inner {
-      background-color: #ffffff;
       .container {
-        width: auto;
-
-        a.logo {
-          float: left;
-          width: 76px;
-          height: 108px;
-          background: url(../img/tapangi-logo.png) no-repeat;
-          background-size: contain;
-          margin-left: 5px;
-        }
-
+        width: 760px;
       }
       .nav {
         > li {
-          float: none;
-          height: 60px;
           > a {
-
-            padding-top: 20px;
-            padding-bottom: 20px;
+            padding-left: 15px;
+            padding-right: 15px;
           }
-          &.active {
-            > a {
-              color: #1a51aa;
-            }
-
-          }
-
         }
       }
-
+    }
+    a.logo {
+      background: url(../img/tapangi-logo-40.png) no-repeat;
+      width: 38px;
+      height: 54px;
     }
   }
-
-  .nav-collapse {
-    clear: both;
-    &.collapse, & {
-      height: 0;
-      overflow: hidden;
-    }
-    .nav {
-      float: none;
-      margin: 0 0 9px;
-      background-color: #f0f0f0;
-
-      > li {
-        float: none;
-        > a {
-          padding-top: 15px;
-          padding-bottom: 15px;
-        }
-      }
-      > .divider-vertical {
-        display: none;
-      }
-      .nav-header {
-        color: #999999;
-        text-shadow: none;
-      }
-      > li > a, .dropdown-menu a {
-        padding: 6px 15px;
-        font-weight: bold;
-        color: #999999;
-        -webkit-border-radius: 0px;
-        -moz-border-radius: 0px;
-        border-radius: 0px;
-      }
-    }
-    .btn {
-      padding: 4px 10px 4px;
-      font-weight: normal;
-      -webkit-border-radius: 0px;
-      -moz-border-radius: 0px;
-      border-radius: 0px;
-    }
-
-  }
-
 }
-

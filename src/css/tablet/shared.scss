@@ -1,26 +1,4 @@
 @media (max-width: 979px) and (min-width: 768px) {
-  .navbar {
-    .navbar-inner {
-      .container {
-        width: 760px;
-      }
-      .nav {
-        > li {
-          > a {
-            padding-left: 15px;
-            padding-right: 15px;
-          }
-        }
-      }
-    }
-    a.logo {
-      background: url(../img/tapangi-logo-40.png) no-repeat;
-      width: 38px;
-      height: 54px;
-    }
-
-  }
-
   .container {
     &.body {
       > div {
@@ -28,12 +6,7 @@
       }
     }
     width: 740px;
-    #home {
-      padding-top: 0;
-      p {
-        margin-left: 110px;
-      }
-    }
+
     .section {
 
       > h3, > p {
@@ -53,139 +26,7 @@
         }
       }
     }
-    #who {
-      p {
-        margin-left: 135px;
-      }
-
-      .sub-section {
-        .description {
-          width: 330px;
-        }
-        .photo {
-          width: 250px;
-          height: 164px;
-        }
-
-      }
-    }
-    #contact {
-      .icon-email {
-        width: 100px;
-      }
-      .icon-twitter {
-        width: 100px;
-      }
-      .tweets {
-        .feedcell {
-          .feedtext {
-            width: 310px;
-
-          }
-        }
-      }
-    }
-    #what {
-      .sub-section {
-        .carousel {
-          height: 310px;
-          .carousel-control {
-            padding-top: 140px;
-          }
-        }
-      }
-
-    }
   }
-}
-
-@media (max-width: 480px) {
-  .nav-collapse {
-    -webkit-transform: translate3d(0, 0, 0);
-  }
-}
-
-@media (max-width: 767px) {
-
-  .container {
-    width: auto;
-    &.body {
-
-      > div {
-        padding-top: 20px;
-      }
-    }
-    #home {
-      padding-top: 0;
-      p {
-        margin-left: 40px;
-        margin-right: 20px;
-        padding-top: 10px;
-      }
-    }
-    .section {
-      > h3, > p {
-        margin-left: 110px;
-        margin-right: 110px;
-      }
-      .sub-section {
-        .carousel {
-          margin-left: 105px;
-          margin-right: 105px;
-          .item {
-            margin-left: 245px;
-            p {
-              padding-right: 25px;
-            }
-          }
-        }
-      }
-    }
-    #who {
-      p {
-        margin-left: 135px;
-      }
-
-      .sub-section {
-        .description {
-          width: 330px;
-        }
-        .photo {
-          width: 250px;
-          height: 164px;
-        }
-
-      }
-    }
-    #contact {
-      .icon-email {
-        width: 100px;
-      }
-      .icon-twitter {
-        width: 100px;
-      }
-      .tweets {
-        .feedcell {
-          .feedtext {
-            width: 310px;
-
-          }
-        }
-      }
-    }
-    #what {
-      .sub-section {
-        .carousel {
-          height: 310px;
-          .carousel-control {
-            padding-top: 140px;
-          }
-        }
-      }
-
-    }
-  }
-
 }
 
 
