@@ -121,8 +121,8 @@ Tapangi.initializeWhatDisc = function() {
   Tapangi.whatDiscCenterY = Math.floor(discHeight / 2) + 1;
   $("#what-disc").mousemove(function(e) {
     var adjacent, angle, diffX, diffY, maxRadius, minRadius, mouseX, mouseY, opposite, radius, tangent;
-    mouseX = e.offsetX;
-    mouseY = e.offsetY;
+    mouseX = e.offsetX || e.clientX - $(e.target).offset().left;
+    mouseY = e.offsetY || e.pageY - $(e.target).offset().top;
     diffX = mouseX - Tapangi.whatDiscCenterX;
     diffY = mouseY - Tapangi.whatDiscCenterY;
     opposite = Math.abs(diffY);
