@@ -144,4 +144,19 @@ p, button {
   }
 }
 
+@mixin transition-timing($seconds) {
+  -webkit-transition: $seconds ease-in-out;
+  -moz-transition: $seconds ease-in-out;
+  -ms-transition: $seconds ease-in-out;
+  -o-transition: $seconds ease-in-out;
+  transition: $seconds ease-in-out;
+}
+
+@mixin rotation($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
 

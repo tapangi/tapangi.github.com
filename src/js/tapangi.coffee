@@ -2,16 +2,16 @@
 # this is used to serialize the form values to JSON
 # @return {Object}
 ##
-$.fn.serializeObject = () ->
-  o = {}
-  a = this.serializeArray()
-  $.each a, () ->
-    if (o[this.name] != undefined)
-      o[this.name] = [o[this.name]] if !o[this.name].push
-      o[this.name].push(this.value || '')
-    else
-      o[this.name] = this.value || ''
-  return o
+#$.fn.serializeObject = () ->
+#  o = {}
+#  a = this.serializeArray()
+#  $.each a, () ->
+#    if (o[this.name] != undefined)
+#      o[this.name] = [o[this.name]] if !o[this.name].push
+#      o[this.name].push(this.value || '')
+#    else
+#      o[this.name] = this.value || ''
+#  return o
 
 console = window.console || {log: (->)}
 Tapangi = window.Tapangi = {}
@@ -44,10 +44,7 @@ Tapangi.initializeForm = () ->
   $contactForm.bind 'submit', (e) ->
     e.preventDefault()
     if Tapangi.validateForm($contactForm)
-      #values = $contactForm.serializeObject()
-      #$.post($contactForm.prop('action'),values, Tapangi.afterSubmitComplete,"script")
-      $contactForm[0].submit()
-      ;
+     $contactForm[0].submit()
     false
   false
 
@@ -142,26 +139,41 @@ Tapangi.initializeWhatDisc = ()->
 
       ## decide:
       if angle < 60 || angle > 300
-        if !$(this).hasClass("cloud")
-          $(this).removeClass("social mobile").addClass("cloud")
+        if !$(this).hasClass("cloud-over")
+          $(this).removeClass("social-over mobile-over").addClass("cloud-over")
       else if angle > 60 && angle < 180
-        if !$(this).hasClass("social")
-          $(this).removeClass("cloud mobile").addClass("social")
+        if !$(this).hasClass("social-over")
+          $(this).removeClass("cloud-over mobile-over").addClass("social-over")
       else
-        if !$(this).hasClass("mobile")
-          $(this).removeClass("cloud social").addClass("mobile")
+        if !$(this).hasClass("mobile-over")
+          $(this).removeClass("cloud-over social-over").addClass("mobile-over")
     else
-      $(this).removeClass("cloud social mobile")
-
+      $(this).removeClass("cloud-over social-over mobile-over")
+  # reset on mouse out
+  # mouse out
   $("#what-disc").mouseout (e)->
-    $(this).removeClass("cloud social mobile down")
+    $(this).removeClass("cloud-over social-over mobile-over down")
 
   $("#what-disc").mousedown (e)->
     $(this).addClass("down")
 
   $("#what-disc").mouseup (e)->
     $(this).removeClass("down")
+    if $(this).hasClass("social-over")
+      item = 0
+    else if $(this).hasClass("mobile-over")
+      item = 1
+    else
+      item = 2
+    $("#what-carousel").carousel(item)
 
+  Tapangi.changeDisc("social")
+
+  $("#what-carousel").bind "slide", (e)->
+    console.log(arguments)
+    $current = $(e.target).find('.carousel-inner .active')
+    section = $(e.relatedTarget).data("section") || "social"
+    Tapangi.changeDisc(section)
 
 
 Tapangi.initializeHowDisc = ()->
@@ -170,3 +182,5 @@ Tapangi.initializeHowDisc = ()->
   Tapangi.howDiscCenterX = Math.floor(discWidth / 2) + 1
   Tapangi.howDiscCenterY = Math.floor(discHeight / 2) + 1
 
+Tapangi.changeDisc = (section) ->
+  $("#what-disc").removeClass("social-active mobile-active cloud-active").addClass(section + "-active")

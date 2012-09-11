@@ -82,8 +82,7 @@ function showfeed(viewerid){
 	
 	var renderfunc='renderfeedcell';
 	if (self['renderfeedcell_'+viewerid]) renderfunc='renderfeedcell_'+viewerid;
-  console.log(renderfunc);
-	views.push(self[renderfunc](feeddata[idxa]));
+  views.push(self[renderfunc](feeddata[idxa]));
 	views.push(self[renderfunc](feeddata[idxb]));
 	views.push(self[renderfunc](feeddata[idxc]));
 
