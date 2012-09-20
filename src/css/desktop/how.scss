@@ -1,0 +1,206 @@
+#how {
+  .sub-section {
+
+    .carousel {
+      .carousel-control {
+
+      }
+    }
+    #how-disc {
+
+      background: url(../img/tapangi-how-disc-bg.png) center center no-repeat;
+      width: 237px;
+      height: 237px;
+      position: absolute;
+      z-index: 10;
+      margin-top: 20px;
+      margin-left: 115px;
+      &.analyze-active {
+        .highlight {
+          //background-image: url(../img/tapangi-disc-bg-social-active.png);
+          @include rotation(126deg);
+          .disc-icon {
+            @include rotation(-126deg);
+            &.disc-icon-social {
+              //background: url(../img/tapangi-icon-social-active.png) center center no-repeat;
+            }
+          }
+
+        }
+      }
+
+      &.architect-active {
+        .highlight {
+          //background-image: url(../img/tapangi-disc-bg-mobile-active.png);
+          @include rotation(54deg);
+          .disc-icon {
+            @include rotation(-54deg);
+            &.disc-icon-mobile {
+              //background: url(../img/tapangi-icon-mobile-active.png) center center no-repeat;
+            }
+          }
+
+        }
+      }
+
+      &.build-active {
+        .highlight {
+          //background-image: url(../img/tapangi-disc-bg-cloud-active.png);
+          @include rotation(-18deg);
+          .disc-icon {
+            @include rotation(18deg);
+            &.disc-icon-cloud {
+              //background: url(../img/tapangi-icon-cloud-active.png) center center no-repeat;
+            }
+          }
+
+        }
+      }
+      &.launch-active {
+        .highlight {
+          //background-image: url(../img/tapangi-disc-bg-cloud-active.png);
+          @include rotation(-90deg);
+          .disc-icon {
+            @include rotation(90deg);
+            &.disc-icon-cloud {
+              //background: url(../img/tapangi-icon-cloud-active.png) center center no-repeat;
+            }
+          }
+
+        }
+      }
+      &.scale-active {
+        .highlight {
+          //background-image: url(../img/tapangi-disc-bg-cloud-active.png);
+          @include rotation(-162deg);
+          .disc-icon {
+            @include rotation(162deg);
+            &.disc-icon-cloud {
+              //background: url(../img/tapangi-icon-cloud-active.png) center center no-repeat;
+            }
+          }
+
+        }
+      }
+      //&.social-over {
+      //  .highlight {
+      //    background-image: url(../img/tapangi-disc-bg-social-hover.png);
+      //    .disc-icon-social {
+      //      background: url(../img/tapangi-icon-social-hover.png) center center no-repeat;
+      //    }
+      //  }
+      //  &.down {
+      //    .highlight {
+      //      background-image: url(../img/tapangi-disc-bg-social-down.png);
+      //      .disc-icon-social {
+      //        background: url(../img/tapangi-icon-social-down.png) center center no-repeat;
+      //      }
+      //    }
+      //  }
+      //}
+      //&.mobile-over {
+      //  .highlight {
+      //    background: url(../img/tapangi-disc-bg-mobile-hover.png) center center no-repeat;
+      //    .disc-icon-mobile {
+      //      background: url(../img/tapangi-icon-mobile-hover.png) center center no-repeat;
+      //    }
+      //  }
+      //  &.down {
+      //    .highlight {
+      //      background: url(../img/tapangi-disc-bg-mobile-down.png) center center no-repeat;
+      //      .disc-icon-mobile {
+      //        background: url(../img/tapangi-icon-mobile-down.png) center center no-repeat;
+      //      }
+      //    }
+      //  }
+      //}
+      //&.cloud-over {
+      //  .highlight {
+      //    background: url(../img/tapangi-disc-bg-cloud-hover.png) center center no-repeat;
+      //    .disc-icon-cloud {
+      //      background: url(../img/tapangi-icon-cloud-hover.png) center center no-repeat;
+      //    }
+      //  }
+      //  &.down {
+      //    .highlight {
+      //      background: url(../img/tapangi-disc-bg-cloud-down.png) center center no-repeat;
+      //      .disc-icon-cloud {
+      //        background: url(../img/tapangi-icon-cloud-down.png) center center no-repeat;
+      //      }
+      //    }
+      //  }
+      //}
+      .highlight {
+
+        @include rotation(0deg);
+        @include transition-timing(.2s);
+        &.rotating {
+          @include transition-timing(.6s);
+        }
+
+        width: 237px;
+        height: 237px;
+        position: absolute;
+        //border-radius: 120px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        .prongs {
+          background: url(../img/tapangi-how-disc-prongs.png) center center no-repeat;
+          width: 237px;
+          height: 237px;
+          position: absolute;
+         // border-radius: 120px;
+
+        }
+        > .disc-icon {
+          -webkit-transition: .6s ease-in-out center;
+          -moz-transition: .6s ease-in-out center;
+          -ms-transition: .6s ease-in-out center;
+          -o-transition: .6s ease-in-out center;
+          transition: .6s ease-in-out center;
+          -webkit-transform: rotate(0deg);
+          -moz-transform: rotate(0deg);
+          -ms-transform: rotate(0deg);
+          -o-transform: rotate(0deg);
+          width: 55px;
+          height: 55px;
+          position: absolute;
+          background-size: 50px 50px;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+        .disc-icon-analyze {
+          background-image: url(../img/tapangi-icon-analyze.png);
+          top: 28px;
+          left: 46px;
+          background-size: 45px 45px;
+        }
+        .disc-icon-architect {
+          background-image: url(../img/tapangi-icon-architect.png);
+          top: 28px;
+          left: 139px;
+
+        }
+        .disc-icon-build {
+          background-image: url(../img/tapangi-icon-build.png);
+          top: 116px;
+          right: 17px;
+
+        }
+        .disc-icon-launch {
+          background-image: url(../img/tapangi-icon-launch.png);
+          top: 170px;
+          right: 90px;
+
+        }
+        .disc-icon-scale {
+          background-image: url(../img/tapangi-icon-scale.png);
+          top: 115px;
+          left: 15px;
+
+        }
+      }
+
+    }
+  }
+}

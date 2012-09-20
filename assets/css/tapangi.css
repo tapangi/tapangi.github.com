@@ -305,7 +305,7 @@ p, button {
       height: 221px;
       position: absolute;
       border-radius: 120px; }
-    #what .sub-section #what-disc .highlight > .disc-icons {
+    #what .sub-section #what-disc .highlight > .disc-icon {
       -webkit-transition: .6s ease-in-out center;
       -moz-transition: .6s ease-in-out center;
       -ms-transition: .6s ease-in-out center;
@@ -336,6 +336,139 @@ p, button {
       position: absolute;
       top: 70px;
       right: 10px; }
+
+#how .sub-section #how-disc {
+  background: url(../img/tapangi-how-disc-bg.png) center center no-repeat;
+  width: 237px;
+  height: 237px;
+  position: absolute;
+  z-index: 10;
+  margin-top: 20px;
+  margin-left: 115px; }
+  #how .sub-section #how-disc.analyze-active .highlight {
+    -webkit-transform: rotate(126deg);
+    -moz-transform: rotate(126deg);
+    -ms-transform: rotate(126deg);
+    -o-transform: rotate(126deg);
+    transform: rotate(126deg); }
+    #how .sub-section #how-disc.analyze-active .highlight .disc-icon {
+      -webkit-transform: rotate(-126deg);
+      -moz-transform: rotate(-126deg);
+      -ms-transform: rotate(-126deg);
+      -o-transform: rotate(-126deg);
+      transform: rotate(-126deg); }
+  #how .sub-section #how-disc.architect-active .highlight {
+    -webkit-transform: rotate(54deg);
+    -moz-transform: rotate(54deg);
+    -ms-transform: rotate(54deg);
+    -o-transform: rotate(54deg);
+    transform: rotate(54deg); }
+    #how .sub-section #how-disc.architect-active .highlight .disc-icon {
+      -webkit-transform: rotate(-54deg);
+      -moz-transform: rotate(-54deg);
+      -ms-transform: rotate(-54deg);
+      -o-transform: rotate(-54deg);
+      transform: rotate(-54deg); }
+  #how .sub-section #how-disc.build-active .highlight {
+    -webkit-transform: rotate(-18deg);
+    -moz-transform: rotate(-18deg);
+    -ms-transform: rotate(-18deg);
+    -o-transform: rotate(-18deg);
+    transform: rotate(-18deg); }
+    #how .sub-section #how-disc.build-active .highlight .disc-icon {
+      -webkit-transform: rotate(18deg);
+      -moz-transform: rotate(18deg);
+      -ms-transform: rotate(18deg);
+      -o-transform: rotate(18deg);
+      transform: rotate(18deg); }
+  #how .sub-section #how-disc.launch-active .highlight {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    transform: rotate(-90deg); }
+    #how .sub-section #how-disc.launch-active .highlight .disc-icon {
+      -webkit-transform: rotate(90deg);
+      -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      -o-transform: rotate(90deg);
+      transform: rotate(90deg); }
+  #how .sub-section #how-disc.scale-active .highlight {
+    -webkit-transform: rotate(-162deg);
+    -moz-transform: rotate(-162deg);
+    -ms-transform: rotate(-162deg);
+    -o-transform: rotate(-162deg);
+    transform: rotate(-162deg); }
+    #how .sub-section #how-disc.scale-active .highlight .disc-icon {
+      -webkit-transform: rotate(162deg);
+      -moz-transform: rotate(162deg);
+      -ms-transform: rotate(162deg);
+      -o-transform: rotate(162deg);
+      transform: rotate(162deg); }
+  #how .sub-section #how-disc .highlight {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+    -ms-transition: 0.2s ease-in-out;
+    -o-transition: 0.2s ease-in-out;
+    transition: 0.2s ease-in-out;
+    width: 237px;
+    height: 237px;
+    position: absolute;
+    background-position: center center;
+    background-repeat: no-repeat; }
+    #how .sub-section #how-disc .highlight.rotating {
+      -webkit-transition: 0.6s ease-in-out;
+      -moz-transition: 0.6s ease-in-out;
+      -ms-transition: 0.6s ease-in-out;
+      -o-transition: 0.6s ease-in-out;
+      transition: 0.6s ease-in-out; }
+    #how .sub-section #how-disc .highlight .prongs {
+      background: url(../img/tapangi-how-disc-prongs.png) center center no-repeat;
+      width: 237px;
+      height: 237px;
+      position: absolute; }
+    #how .sub-section #how-disc .highlight > .disc-icon {
+      -webkit-transition: .6s ease-in-out center;
+      -moz-transition: .6s ease-in-out center;
+      -ms-transition: .6s ease-in-out center;
+      -o-transition: .6s ease-in-out center;
+      transition: .6s ease-in-out center;
+      -webkit-transform: rotate(0deg);
+      -moz-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      -o-transform: rotate(0deg);
+      width: 55px;
+      height: 55px;
+      position: absolute;
+      background-size: 50px 50px;
+      background-position: center center;
+      background-repeat: no-repeat; }
+    #how .sub-section #how-disc .highlight .disc-icon-analyze {
+      background-image: url(../img/tapangi-icon-analyze.png);
+      top: 28px;
+      left: 46px;
+      background-size: 45px 45px; }
+    #how .sub-section #how-disc .highlight .disc-icon-architect {
+      background-image: url(../img/tapangi-icon-architect.png);
+      top: 28px;
+      left: 139px; }
+    #how .sub-section #how-disc .highlight .disc-icon-build {
+      background-image: url(../img/tapangi-icon-build.png);
+      top: 116px;
+      right: 17px; }
+    #how .sub-section #how-disc .highlight .disc-icon-launch {
+      background-image: url(../img/tapangi-icon-launch.png);
+      top: 170px;
+      right: 90px; }
+    #how .sub-section #how-disc .highlight .disc-icon-scale {
+      background-image: url(../img/tapangi-icon-scale.png);
+      top: 115px;
+      left: 15px; }
 
 #who > p, #who > h3 {
   margin-left: 140px; }

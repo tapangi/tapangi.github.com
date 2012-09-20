@@ -13,14 +13,21 @@
 #      o[this.name] = this.value || ''
 #  return o
 
+
+
 console = window.console || {log: (->)}
 Tapangi = window.Tapangi = {}
 Tapangi.emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/
+
+#@codekit-append "form.coffee"
+#@codekit-append "twitter.coffee"
+#@codekit-append "disc.coffee"
 
 Tapangi.onReady = () ->
   Tapangi.onResize()
   Tapangi.initializeForm()
   Tapangi.initializeWhatDisc()
+  Tapangi.initializeHowDisc()
 
   gettwitterfeed("tweets", "@polishprince")
 
@@ -33,50 +40,9 @@ Tapangi.onResize = () ->
   )
 
 
-Tapangi.initializeForm = () ->
-  console.log "initialize form"
-  $contactForm = $ "#contact-form"
-  $contactForm.find("[type=submit]").prop('disabled', true)
-  $fields = $contactForm.find("input, textarea")
-  $fields.bind("change", (event) ->
-    Tapangi.validateForm($contactForm)
-  )
-  $contactForm.bind 'submit', (e) ->
-    e.preventDefault()
-    if Tapangi.validateForm($contactForm)
-     $contactForm[0].submit()
-    false
-  false
-
-Tapangi.validateForm = ($contactForm) ->
-  values = $contactForm.serializeObject()
-  validationErrors = []
-  console.log(values)
-  for key of values
-    if key != "comment" and key != "Field7"
-      if values[key] == ""
-        validationErrors.push key
-
-    if key == "Field2" and !Tapangi.emailRegex.test values[key]
-      validationErrors.push key
 
 
-  if validationErrors.length == 0
-    $contactForm.find("[type=submit]").prop('disabled', false)
-    return true
 
-  return true
-
-Tapangi.afterSubmitComplete = (data, status) ->
-  console.log(status)
-  console.log(data)
-
-
-renderfeedcell_tweets = (data) ->
-  text=data.text
-  author=data.from_user
-  img=data.profile_image_url
-  html='<div class="feedcell"><a target=_blank href="http://twitter.com/' + author + '"><img class="authorimg" src="' + img + '"></a><span class="feedtext">' + text + '</span></div>'
 
 
 $(document).ready(Tapangi.onReady)
@@ -92,95 +58,3 @@ $(".btn-navbar").bind 'click', () ->
 
 
 
-
-
-Tapangi.initializeWhatDisc = ()->
-  discWidth = $("#what-disc").width()
-  discHeight = $("#what-disc").height()
-  Tapangi.whatDiscCenterX = Math.floor(discWidth / 2) + 1
-  Tapangi.whatDiscCenterY = Math.floor(discHeight / 2) + 1
-
-
-  $("#what-disc").mousemove (e)->
-
-    mouseX = e.offsetX || e.clientX - $(e.target).offset().left
-    mouseY = e.offsetY || e.pageY - $(e.target).offset().top
-
-
-    diffX = (mouseX - Tapangi.whatDiscCenterX)
-    diffY = (mouseY - Tapangi.whatDiscCenterY)
-
-    opposite = Math.abs(diffY)
-    adjacent = Math.abs(diffX)
-    radius = Math.sqrt((opposite * opposite) + (adjacent * adjacent))
-
-    minRadius = 22
-    maxRadius = 110
-
-    if radius > minRadius and radius <= maxRadius
-      tangent = opposite / adjacent
-      if diffX != 0
-        angle = Math.atan(tangent) * 180 / Math.PI
-        if diffY < 0
-          if diffX < 0
-            angle = 180 - angle
-        else
-          if diffX < 0
-            angle = angle + 180
-          else
-            angle = 360 - angle
-      else
-        if diffY > 0
-          angle = 270
-        else
-          angle = 90
-
-      ## adjust based on the rotation of the star
-
-      ## decide:
-      if angle < 60 || angle > 300
-        if !$(this).hasClass("cloud-over")
-          $(this).removeClass("social-over mobile-over").addClass("cloud-over")
-      else if angle > 60 && angle < 180
-        if !$(this).hasClass("social-over")
-          $(this).removeClass("cloud-over mobile-over").addClass("social-over")
-      else
-        if !$(this).hasClass("mobile-over")
-          $(this).removeClass("cloud-over social-over").addClass("mobile-over")
-    else
-      $(this).removeClass("cloud-over social-over mobile-over")
-  # reset on mouse out
-  # mouse out
-  $("#what-disc").mouseout (e)->
-    $(this).removeClass("cloud-over social-over mobile-over down")
-
-  $("#what-disc").mousedown (e)->
-    $(this).addClass("down")
-
-  $("#what-disc").mouseup (e)->
-    $(this).removeClass("down")
-    if $(this).hasClass("social-over")
-      item = 0
-    else if $(this).hasClass("mobile-over")
-      item = 1
-    else
-      item = 2
-    $("#what-carousel").carousel(item)
-
-  Tapangi.changeDisc("social")
-
-  $("#what-carousel").bind "slide", (e)->
-    console.log(arguments)
-    $current = $(e.target).find('.carousel-inner .active')
-    section = $(e.relatedTarget).data("section") || "social"
-    Tapangi.changeDisc(section)
-
-
-Tapangi.initializeHowDisc = ()->
-  discWidth = $("#how-disc").width()
-  discHeight = $("#how-disc").height()
-  Tapangi.howDiscCenterX = Math.floor(discWidth / 2) + 1
-  Tapangi.howDiscCenterY = Math.floor(discHeight / 2) + 1
-
-Tapangi.changeDisc = (section) ->
-  $("#what-disc").removeClass("social-active mobile-active cloud-active").addClass(section + "-active")

@@ -13,6 +13,7 @@ Tapangi.onReady = function() {
   Tapangi.onResize();
   Tapangi.initializeForm();
   Tapangi.initializeWhatDisc();
+  Tapangi.initializeHowDisc();
   return gettwitterfeed("tweets", "@polishprince");
 };
 
@@ -25,6 +26,28 @@ Tapangi.onResize = function() {
     return $(this).scrollspy('refresh');
   });
 };
+
+$(document).ready(Tapangi.onReady);
+
+$(window).resize(Tapangi.onResize);
+
+$("iframe").load(function(e) {
+  $("#thanks").modal("show");
+  return $("#contact-form")[0].reset();
+});
+
+$(".btn-navbar").bind('click', function() {
+  $(this).toggleClass("active");
+  return $(".nav-collapse li > a").bind("click", function() {
+    return $(".btn-navbar").trigger('click');
+  });
+});
+
+/* --------------------------------------------
+     Begin form.coffee
+--------------------------------------------
+*/
+
 
 Tapangi.initializeForm = function() {
   var $contactForm, $fields;
@@ -72,6 +95,12 @@ Tapangi.afterSubmitComplete = function(data, status) {
   return console.log(data);
 };
 
+/* --------------------------------------------
+     Begin twitter.coffee
+--------------------------------------------
+*/
+
+
 renderfeedcell_tweets = function(data) {
   var author, html, img, text;
   text = data.text;
@@ -80,85 +109,145 @@ renderfeedcell_tweets = function(data) {
   return html = '<div class="feedcell"><a target=_blank href="http://twitter.com/' + author + '"><img class="authorimg" src="' + img + '"></a><span class="feedtext">' + text + '</span></div>';
 };
 
-$(document).ready(Tapangi.onReady);
+/* --------------------------------------------
+     Begin disc.coffee
+--------------------------------------------
+*/
 
-$(window).resize(Tapangi.onResize);
 
-$("iframe").load(function(e) {
-  $("#thanks").modal("show");
-  return $("#contact-form")[0].reset();
-});
+/* --------------------------------------------
+     Begin shared.coffee
+--------------------------------------------
+*/
 
-$(".btn-navbar").bind('click', function() {
-  $(this).toggleClass("active");
-  return $(".nav-collapse li > a").bind("click", function() {
-    return $(".btn-navbar").trigger('click');
-  });
-});
 
-Tapangi.initializeWhatDisc = function() {
-  var discHeight, discWidth;
-  discWidth = $("#what-disc").width();
-  discHeight = $("#what-disc").height();
-  Tapangi.whatDiscCenterX = Math.floor(discWidth / 2) + 1;
-  Tapangi.whatDiscCenterY = Math.floor(discHeight / 2) + 1;
-  $("#what-disc").mousemove(function(e) {
-    var adjacent, angle, diffX, diffY, maxRadius, minRadius, mouseX, mouseY, opposite, radius, tangent;
-    mouseX = e.offsetX || e.clientX - $(e.target).offset().left;
-    mouseY = e.offsetY || e.pageY - $(e.target).offset().top;
-    diffX = mouseX - Tapangi.whatDiscCenterX;
-    diffY = mouseY - Tapangi.whatDiscCenterY;
-    opposite = Math.abs(diffY);
-    adjacent = Math.abs(diffX);
-    radius = Math.sqrt((opposite * opposite) + (adjacent * adjacent));
-    minRadius = 22;
-    maxRadius = 110;
-    if (radius > minRadius && radius <= maxRadius) {
-      tangent = opposite / adjacent;
-      if (diffX !== 0) {
-        angle = Math.atan(tangent) * 180 / Math.PI;
-        if (diffY < 0) {
-          if (diffX < 0) {
-            angle = 180 - angle;
-          }
-        } else {
-          if (diffX < 0) {
-            angle = angle + 180;
-          } else {
-            angle = 360 - angle;
-          }
+Tapangi.mouseX = function(e) {
+  return e.offsetX || e.clientX - $(e.target).offset().left;
+};
+
+Tapangi.mouseY = function(e) {
+  return e.offsetY || e.pageY - $(e.target).offset().top;
+};
+
+Tapangi.changeDisc = function($disc, section) {
+  return $disc.removeClass(Tapangi[$disc.prop("id")].activeClasses).addClass(section + "-active");
+};
+
+Tapangi.mouseOutOnDisc = function(e) {
+  return $(this).removeClass(Tapangi[$(this).prop("id")].hoverClasses + " down");
+};
+
+Tapangi.mouseDownOnDisc = function(e) {
+  return $(this).addClass("down");
+};
+
+Tapangi.mouseMoveOnDisc = function(e) {
+  var adjacent, angle, diffX, diffY, discId, maxRadius, minRadius, opposite, radius, tangent;
+  discId = $(this).prop("id");
+  diffX = Tapangi.mouseX(e) - Tapangi[discId].centerX;
+  diffY = Tapangi.mouseY(e) - Tapangi[discId].centerY;
+  opposite = Math.abs(diffY);
+  adjacent = Math.abs(diffX);
+  radius = Math.sqrt((opposite * opposite) + (adjacent * adjacent));
+  minRadius = Tapangi[discId].minRadius;
+  maxRadius = Tapangi[discId].maxRadius;
+  if (radius > minRadius && radius <= maxRadius) {
+    tangent = opposite / adjacent;
+    if (diffX !== 0) {
+      angle = Math.atan(tangent) * 180 / Math.PI;
+      if (diffY < 0) {
+        if (diffX < 0) {
+          angle = 180 - angle;
         }
       } else {
-        if (diffY > 0) {
-          angle = 270;
+        if (diffX < 0) {
+          angle = angle + 180;
         } else {
-          angle = 90;
-        }
-      }
-      if (angle < 60 || angle > 300) {
-        if (!$(this).hasClass("cloud-over")) {
-          return $(this).removeClass("social-over mobile-over").addClass("cloud-over");
-        }
-      } else if (angle > 60 && angle < 180) {
-        if (!$(this).hasClass("social-over")) {
-          return $(this).removeClass("cloud-over mobile-over").addClass("social-over");
-        }
-      } else {
-        if (!$(this).hasClass("mobile-over")) {
-          return $(this).removeClass("cloud-over social-over").addClass("mobile-over");
+          angle = 360 - angle;
         }
       }
     } else {
-      return $(this).removeClass("cloud-over social-over mobile-over");
+      if (diffY > 0) {
+        angle = 270;
+      } else {
+        angle = 90;
+      }
     }
-  });
-  $("#what-disc").mouseout(function(e) {
-    return $(this).removeClass("cloud-over social-over mobile-over down");
-  });
-  $("#what-disc").mousedown(function(e) {
-    return $(this).addClass("down");
-  });
-  $("#what-disc").mouseup(function(e) {
+  } else {
+    angle = null;
+  }
+  return Tapangi[discId].reactToAngle(radius, angle, $(this));
+};
+
+Tapangi.onCarouselSlide = function(e) {
+  var $current, discId, section;
+  discId = $(this).data("disc") + "-disc";
+  $current = $(e.target).find('.carousel-inner .active');
+  if (e.relatedTarget) {
+    section = $(e.relatedTarget).data("section");
+  } else {
+    if (e.direction === "left") {
+      section = Tapangi[discId].first;
+    } else {
+      section = Tapangi[discId].last;
+    }
+  }
+  return Tapangi.changeDisc($("#" + discId), section);
+};
+
+/* --------------------------------------------
+     Begin what.coffee
+--------------------------------------------
+*/
+
+
+Tapangi["what-disc"] = {};
+
+Tapangi["what-disc"].minRadius = 22;
+
+Tapangi["what-disc"].maxRadius = 110;
+
+Tapangi["what-disc"].centerX = 0;
+
+Tapangi["what-disc"].centerY = 0;
+
+Tapangi["what-disc"].first = "social";
+
+Tapangi["what-disc"].last = "cloud";
+
+Tapangi["what-disc"].activeClasses = "social-active mobile-active cloud-active";
+
+Tapangi["what-disc"].hoverClasses = "cloud-over social-over mobile-over";
+
+Tapangi["what-disc"].reactToAngle = function(radius, angle, $disc) {
+  if (angle) {
+    if (angle < 60 || angle > 300) {
+      if (!$disc.hasClass("cloud-over")) {
+        return $disc.removeClass("social-over mobile-over").addClass("cloud-over");
+      }
+    } else if (angle > 60 && angle < 180) {
+      if (!$disc.hasClass("social-over")) {
+        return $disc.removeClass("cloud-over mobile-over").addClass("social-over");
+      }
+    } else {
+      if (!$disc.hasClass("mobile-over")) {
+        return $disc.removeClass("cloud-over social-over").addClass("mobile-over");
+      }
+    }
+  } else {
+    return $disc.removeClass("cloud-over social-over mobile-over");
+  }
+};
+
+Tapangi.initializeWhatDisc = function() {
+  var $whatDisc;
+  $whatDisc = $("#what-disc");
+  Tapangi["what-disc"].centerX = Math.floor($whatDisc.width() / 2) + 1;
+  Tapangi["what-disc"].centerY = Math.floor($whatDisc.height() / 2) + 1;
+  $whatDisc.mousemove(Tapangi.mouseMoveOnDisc);
+  $whatDisc.mouseout(Tapangi.mouseOutOnDisc);
+  $whatDisc.mousedown(Tapangi.mouseDownOnDisc);
+  $whatDisc.mouseup(function(e) {
     var item;
     $(this).removeClass("down");
     if ($(this).hasClass("social-over")) {
@@ -170,24 +259,95 @@ Tapangi.initializeWhatDisc = function() {
     }
     return $("#what-carousel").carousel(item);
   });
-  Tapangi.changeDisc("social");
-  return $("#what-carousel").bind("slide", function(e) {
-    var $current, section;
-    console.log(arguments);
-    $current = $(e.target).find('.carousel-inner .active');
-    section = $(e.relatedTarget).data("section") || "social";
-    return Tapangi.changeDisc(section);
-  });
+  Tapangi.changeDisc($("#what-disc"), "social");
+  return $("#what-carousel").bind("slide", Tapangi.onCarouselSlide);
+};
+
+/* --------------------------------------------
+     Begin how.coffee
+--------------------------------------------
+*/
+
+
+Tapangi["how-disc"] = {};
+
+Tapangi["how-disc"].minRadius = 53;
+
+Tapangi["how-disc"].maxRadius = 108;
+
+Tapangi["how-disc"].maxCenterRadius = 36;
+
+Tapangi["how-disc"].centerX = 0;
+
+Tapangi["how-disc"].centerY = 0;
+
+Tapangi["how-disc"].first = "kick-off";
+
+Tapangi["how-disc"].last = "communicate";
+
+Tapangi["how-disc"].activeClasses = "kick-off-active analyze-active architect-active build-active launch-active scale-active communicate-active";
+
+Tapangi["how-disc"].hoverClasses = "kick-off-over analyze-over architect-over build-over launch-over scale-over communicate-over";
+
+Tapangi["how-disc"].reactToAngle = function(radius, angle, $disc) {
+  console.log("reactToAngle", radius, angle);
+  if (angle) {
+    if (angle < 18 || angle > 306) {
+      if (!$disc.hasClass("build-over")) {
+        return $disc.removeClass(Tapangi["how-disc"].hoverClasses).addClass("build-over");
+      }
+    } else if (angle > 18 && angle < 90) {
+      if (!$disc.hasClass("architect-over")) {
+        return $disc.removeClass(Tapangi["how-disc"].hoverClasses).addClass("architect-over");
+      }
+    } else if (angle > 90 && angle < 162) {
+      if (!$disc.hasClass("analyze-over")) {
+        return $disc.removeClass(Tapangi["how-disc"].hoverClasses).addClass("analyze-over");
+      }
+    } else if (162 > 90 && angle < 234) {
+      if (!$disc.hasClass("scale-over")) {
+        return $disc.removeClass(Tapangi["how-disc"].hoverClasses).addClass("scale-over");
+      }
+    } else {
+      if (!$disc.hasClass("launch-over")) {
+        return $disc.removeClass(Tapangi["how-disc"].hoverClasses).addClass("launch-over");
+      }
+    }
+  } else {
+    if (radius < Tapangi["how-disc"].minRadius && radius > Tapangi["how-disc"].maxCenterRadius) {
+      return console.log("in the center");
+    } else {
+      return $disc.removeClass(Tapangi["how-disc"].hoverClasses);
+    }
+  }
 };
 
 Tapangi.initializeHowDisc = function() {
-  var discHeight, discWidth;
-  discWidth = $("#how-disc").width();
-  discHeight = $("#how-disc").height();
-  Tapangi.howDiscCenterX = Math.floor(discWidth / 2) + 1;
-  return Tapangi.howDiscCenterY = Math.floor(discHeight / 2) + 1;
-};
-
-Tapangi.changeDisc = function(section) {
-  return $("#what-disc").removeClass("social-active mobile-active cloud-active").addClass(section + "-active");
+  var $whatDisc;
+  $whatDisc = $("#how-disc");
+  Tapangi["how-disc"].centerX = Math.floor($whatDisc.width() / 2) + 1;
+  Tapangi["how-disc"].centerY = Math.floor($whatDisc.height() / 2) + 1;
+  $whatDisc.mousemove(Tapangi.mouseMoveOnDisc);
+  $whatDisc.mouseout(Tapangi.mouseOutOnDisc);
+  $whatDisc.mousedown(Tapangi.mouseDownOnDisc);
+  $whatDisc.mouseup(function(e) {
+    var item;
+    $(this).removeClass("down");
+    if ($(this).hasClass("analyze-over")) {
+      item = 1;
+    } else if ($(this).hasClass("architect-over")) {
+      item = 2;
+    } else if ($(this).hasClass("build-over")) {
+      item = 3;
+    } else if ($(this).hasClass("launch-over")) {
+      item = 4;
+    } else if ($(this).hasClass("scale-over")) {
+      item = 5;
+    } else {
+      item = 6;
+    }
+    return $("#how-carousel").carousel(item);
+  });
+  Tapangi.changeDisc($("#how-disc"), "kick-off");
+  return $("#how-carousel").bind("slide", Tapangi.onCarouselSlide);
 };
