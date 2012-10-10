@@ -36,8 +36,9 @@ Tapangi["how-disc"].reactToAngle = (radius, angle, $disc) ->
       if !$disc.hasClass("launch-over")
         $disc.removeClass(Tapangi["how-disc"].hoverClasses).addClass("launch-over")
   else
-    if radius < Tapangi["how-disc"].minRadius and radius > Tapangi["how-disc"].maxCenterRadius
-      console.log("in the center")
+    if radius < Tapangi["how-disc"].maxCenterRadius
+      if !$disc.hasClass("communicate-over") and !$disc.hasClass("kick-off-active")
+        $disc.removeClass(Tapangi["how-disc"].hoverClasses).addClass("communicate-over")
     else
       $disc.removeClass(Tapangi["how-disc"].hoverClasses)
 
@@ -69,9 +70,9 @@ Tapangi.initializeHowDisc = () ->
       item = 4
     else if $(this).hasClass("scale-over")
       item = 5
-    else
+    else if $(this).hasClass("communicate-over")
       item = 6
-    $("#how-carousel").carousel(item)
+    $("#how-carousel").carousel(item) if item
 
   Tapangi.changeDisc($("#how-disc"), "kick-off")
 

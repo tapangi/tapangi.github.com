@@ -345,7 +345,16 @@ p, button {
   z-index: 10;
   margin-top: 20px;
   margin-left: 115px; }
+  #how .sub-section #how-disc .indicator {
+    width: 28px;
+    height: 36px;
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background: url(../img/tapangi-disc-indicator.png) center center no-repeat;
+    display: block; }
   #how .sub-section #how-disc.analyze-active .highlight {
+    background-image: url(../img/tapangi-how-disc-analyze-active.png);
     -webkit-transform: rotate(126deg);
     -moz-transform: rotate(126deg);
     -ms-transform: rotate(126deg);
@@ -357,7 +366,10 @@ p, button {
       -ms-transform: rotate(-126deg);
       -o-transform: rotate(-126deg);
       transform: rotate(-126deg); }
+      #how .sub-section #how-disc.analyze-active .highlight .disc-icon.disc-icon-analyze {
+        background-image: url(../img/tapangi-icon-analyze-active.png); }
   #how .sub-section #how-disc.architect-active .highlight {
+    background-image: url(../img/tapangi-how-disc-architect-active.png);
     -webkit-transform: rotate(54deg);
     -moz-transform: rotate(54deg);
     -ms-transform: rotate(54deg);
@@ -369,7 +381,10 @@ p, button {
       -ms-transform: rotate(-54deg);
       -o-transform: rotate(-54deg);
       transform: rotate(-54deg); }
+      #how .sub-section #how-disc.architect-active .highlight .disc-icon.disc-icon-architect {
+        background-image: url(../img/tapangi-icon-architect-active.png); }
   #how .sub-section #how-disc.build-active .highlight {
+    background-image: url(../img/tapangi-how-disc-build-active.png);
     -webkit-transform: rotate(-18deg);
     -moz-transform: rotate(-18deg);
     -ms-transform: rotate(-18deg);
@@ -381,7 +396,10 @@ p, button {
       -ms-transform: rotate(18deg);
       -o-transform: rotate(18deg);
       transform: rotate(18deg); }
+      #how .sub-section #how-disc.build-active .highlight .disc-icon.disc-icon-build {
+        background-image: url(../img/tapangi-icon-build-active.png); }
   #how .sub-section #how-disc.launch-active .highlight {
+    background-image: url(../img/tapangi-how-disc-launch-active.png);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
@@ -393,7 +411,10 @@ p, button {
       -ms-transform: rotate(90deg);
       -o-transform: rotate(90deg);
       transform: rotate(90deg); }
+      #how .sub-section #how-disc.launch-active .highlight .disc-icon.disc-icon-launch {
+        background-image: url(../img/tapangi-icon-launch-active.png); }
   #how .sub-section #how-disc.scale-active .highlight {
+    background-image: url(../img/tapangi-how-disc-scale-active.png);
     -webkit-transform: rotate(-162deg);
     -moz-transform: rotate(-162deg);
     -ms-transform: rotate(-162deg);
@@ -405,6 +426,62 @@ p, button {
       -ms-transform: rotate(162deg);
       -o-transform: rotate(162deg);
       transform: rotate(162deg); }
+      #how .sub-section #how-disc.scale-active .highlight .disc-icon.disc-icon-scale {
+        background-image: url(../img/tapangi-icon-scale-active.png); }
+  #how .sub-section #how-disc.kick-off-active .indicator {
+    display: none; }
+  #how .sub-section #how-disc.kick-off-active .center-icon.center-icon-communicate {
+    display: none; }
+  #how .sub-section #how-disc.kick-off-active .center-icon.center-icon-kick-off {
+    display: block; }
+  #how .sub-section #how-disc.communicate-active .indicator {
+    display: none; }
+  #how .sub-section #how-disc.communicate-active .center-icon.center-icon-communicate {
+    background-image: url(../img/tapangi-icon-communicate-active.png); }
+  #how .sub-section #how-disc.analyze-over .highlight {
+    background-image: url(../img/tapangi-how-disc-analyze-over.png); }
+    #how .sub-section #how-disc.analyze-over .highlight .disc-icon.disc-icon-analyze {
+      background-image: url(../img/tapangi-icon-analyze-down.png); }
+  #how .sub-section #how-disc.analyze-over.down .highlight {
+    background-image: url(../img/tapangi-how-disc-analyze-down.png); }
+    #how .sub-section #how-disc.analyze-over.down .highlight .disc-icon.disc-icon-analyze {
+      background-image: url(../img/tapangi-icon-analyze-down.png); }
+  #how .sub-section #how-disc.architect-over .highlight {
+    background-image: url(../img/tapangi-how-disc-architect-over.png); }
+    #how .sub-section #how-disc.architect-over .highlight .disc-icon.disc-icon-architect {
+      background-image: url(../img/tapangi-icon-architect-down.png); }
+  #how .sub-section #how-disc.architect-over.down .highlight {
+    background-image: url(../img/tapangi-how-disc-architect-down.png); }
+    #how .sub-section #how-disc.architect-over.down .highlight .disc-icon.disc-icon-architect {
+      background-image: url(../img/tapangi-icon-architect-down.png); }
+  #how .sub-section #how-disc.build-over .highlight {
+    background-image: url(../img/tapangi-how-disc-build-over.png); }
+    #how .sub-section #how-disc.build-over .highlight .disc-icon.disc-icon-build {
+      background-image: url(../img/tapangi-icon-build-down.png); }
+  #how .sub-section #how-disc.build-over.down .highlight {
+    background-image: url(../img/tapangi-how-disc-build-down.png); }
+    #how .sub-section #how-disc.build-over.down .highlight .disc-icon.disc-icon-build {
+      background-image: url(../img/tapangi-icon-build-down.png); }
+  #how .sub-section #how-disc.launch-over .highlight {
+    background-image: url(../img/tapangi-how-disc-launch-over.png); }
+    #how .sub-section #how-disc.launch-over .highlight .disc-icon.disc-icon-launch {
+      background-image: url(../img/tapangi-icon-launch-down.png); }
+  #how .sub-section #how-disc.launch-over.down .highlight {
+    background-image: url(../img/tapangi-how-disc-launch-down.png); }
+    #how .sub-section #how-disc.launch-over.down .highlight .disc-icon.disc-icon-launch {
+      background-image: url(../img/tapangi-icon-launch-down.png); }
+  #how .sub-section #how-disc.scale-over .highlight {
+    background-image: url(../img/tapangi-how-disc-scale-over.png); }
+    #how .sub-section #how-disc.scale-over .highlight .disc-icon.disc-icon-scale {
+      background-image: url(../img/tapangi-icon-scale-down.png); }
+  #how .sub-section #how-disc.scale-over.down .highlight {
+    background-image: url(../img/tapangi-how-disc-scale-down.png); }
+    #how .sub-section #how-disc.scale-over.down .highlight .disc-icon.disc-icon-scale {
+      background-image: url(../img/tapangi-icon-scale-down.png); }
+  #how .sub-section #how-disc.communicate-over .center-icon.center-icon-communicate {
+    background-image: url(../img/tapangi-icon-communicate-over.png); }
+  #how .sub-section #how-disc.communicate-over.down .center-icon.center-icon-communicate {
+    background-image: url(../img/tapangi-icon-communicate-down.png); }
   #how .sub-section #how-disc .highlight {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
@@ -448,27 +525,43 @@ p, button {
       background-size: 50px 50px;
       background-position: center center;
       background-repeat: no-repeat; }
-    #how .sub-section #how-disc .highlight .disc-icon-analyze {
-      background-image: url(../img/tapangi-icon-analyze.png);
-      top: 28px;
-      left: 46px;
-      background-size: 45px 45px; }
-    #how .sub-section #how-disc .highlight .disc-icon-architect {
-      background-image: url(../img/tapangi-icon-architect.png);
-      top: 28px;
-      left: 139px; }
-    #how .sub-section #how-disc .highlight .disc-icon-build {
-      background-image: url(../img/tapangi-icon-build.png);
-      top: 116px;
-      right: 17px; }
-    #how .sub-section #how-disc .highlight .disc-icon-launch {
-      background-image: url(../img/tapangi-icon-launch.png);
-      top: 170px;
-      right: 90px; }
-    #how .sub-section #how-disc .highlight .disc-icon-scale {
-      background-image: url(../img/tapangi-icon-scale.png);
-      top: 115px;
-      left: 15px; }
+      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-analyze {
+        background-image: url(../img/tapangi-icon-analyze.png);
+        top: 28px;
+        left: 46px;
+        background-size: 45px 45px; }
+      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-architect {
+        background-image: url(../img/tapangi-icon-architect.png);
+        top: 28px;
+        left: 139px; }
+      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-build {
+        background-image: url(../img/tapangi-icon-build.png);
+        top: 116px;
+        right: 17px; }
+      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-launch {
+        background-image: url(../img/tapangi-icon-launch.png);
+        top: 170px;
+        right: 90px; }
+      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-scale {
+        background-image: url(../img/tapangi-icon-scale.png);
+        top: 115px;
+        left: 15px; }
+  #how .sub-section #how-disc > .center-icon {
+    position: absolute;
+    top: 67px;
+    left: 68px;
+    width: 105px;
+    height: 105px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+    #how .sub-section #how-disc > .center-icon.center-icon-communicate {
+      background-image: url(../img/tapangi-icon-communicate.png); }
+    #how .sub-section #how-disc > .center-icon.center-icon-kick-off {
+      background-image: url(../img/tapangi-icon-kick-off-active.png);
+      display: none; }
 
 #who > p, #who > h3 {
   margin-left: 140px; }

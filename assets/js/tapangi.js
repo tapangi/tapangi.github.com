@@ -314,8 +314,10 @@ Tapangi["how-disc"].reactToAngle = function(radius, angle, $disc) {
       }
     }
   } else {
-    if (radius < Tapangi["how-disc"].minRadius && radius > Tapangi["how-disc"].maxCenterRadius) {
-      return console.log("in the center");
+    if (radius < Tapangi["how-disc"].maxCenterRadius) {
+      if (!$disc.hasClass("communicate-over") && !$disc.hasClass("kick-off-active")) {
+        return $disc.removeClass(Tapangi["how-disc"].hoverClasses).addClass("communicate-over");
+      }
     } else {
       return $disc.removeClass(Tapangi["how-disc"].hoverClasses);
     }
@@ -343,10 +345,12 @@ Tapangi.initializeHowDisc = function() {
       item = 4;
     } else if ($(this).hasClass("scale-over")) {
       item = 5;
-    } else {
+    } else if ($(this).hasClass("communicate-over")) {
       item = 6;
     }
-    return $("#how-carousel").carousel(item);
+    if (item) {
+      return $("#how-carousel").carousel(item);
+    }
   });
   Tapangi.changeDisc($("#how-disc"), "kick-off");
   return $("#how-carousel").bind("slide", Tapangi.onCarouselSlide);
