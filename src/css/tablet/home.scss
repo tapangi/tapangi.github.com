@@ -3,9 +3,9 @@
     &.body {
 
       //this is weird, but necessary for the navbar to work right
-      #home {
-        padding-top: 125px;
-        margin-top: -125px;
+      #home-section {
+        padding-top: 0px;
+      //  margin-top: -125px;
         p {
           margin-left: 110px;
         }

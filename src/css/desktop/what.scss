@@ -1,4 +1,4 @@
-#what {
+#what-section {
   .sub-section {
 
     .carousel {
@@ -16,7 +16,17 @@
       border-radius: 120px;
       box-shadow: 1px 1px 10px 2px rgba(50, 50, 50, 0.3);
       margin-top: 20px;
-      margin-left: 115px;
+      margin-left: 140px;
+
+      .indicator {
+        width: 28px;
+        height: 36px;
+        position: absolute;
+        top: 92px;
+        right: -8px;
+        background: url(../img/tapangi-disc-indicator.png) center center no-repeat;
+        display: block;
+      }
       &.social-active {
         .highlight {
           background-image: url(../img/tapangi-disc-bg-social-active.png);

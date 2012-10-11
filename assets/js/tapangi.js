@@ -14,14 +14,17 @@ Tapangi.onReady = function() {
   Tapangi.initializeForm();
   Tapangi.initializeWhatDisc();
   Tapangi.initializeHowDisc();
+  Tapangi.initializeBackToTop();
   return gettwitterfeed("tweets", "@polishprince");
 };
 
 Tapangi.onResize = function() {
-  var navbarHeight, sectionHeight;
+  var homeSectionHeight, navbarHeight, sectionHeight;
   navbarHeight = window.innerWidth > 979 ? parseInt($('.navbar .navbar-inner').css('height').substr(0, 3), 10) : 0;
-  sectionHeight = window.innerHeight - navbarHeight;
-  $(".container.body > div").css("min-height", sectionHeight);
+  sectionHeight = window.innerHeight - (navbarHeight + 25);
+  homeSectionHeight = sectionHeight + 0;
+  $(".container.body > .section").css("min-height", sectionHeight);
+  $("#home-section").css("min-height", homeSectionHeight);
   return $('[data-spy="scroll"]').each(function() {
     return $(this).scrollspy('refresh');
   });
@@ -42,6 +45,12 @@ $(".btn-navbar").bind('click', function() {
     return $(".btn-navbar").trigger('click');
   });
 });
+
+Tapangi.initializeBackToTop = function() {
+  return $(".back-to-top").click(function(e) {
+    return window.location.hash = "";
+  });
+};
 
 /* --------------------------------------------
      Begin form.coffee

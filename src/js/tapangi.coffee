@@ -28,13 +28,17 @@ Tapangi.onReady = () ->
   Tapangi.initializeForm()
   Tapangi.initializeWhatDisc()
   Tapangi.initializeHowDisc()
+  Tapangi.initializeBackToTop()
 
   gettwitterfeed("tweets", "@polishprince")
 
 Tapangi.onResize = () ->
   navbarHeight = if window.innerWidth > 979 then parseInt $('.navbar .navbar-inner').css('height').substr(0, 3), 10 else 0
-  sectionHeight = window.innerHeight - navbarHeight
-  $(".container.body > div").css("min-height", sectionHeight)
+  sectionHeight = window.innerHeight - ( navbarHeight + 25)
+  homeSectionHeight = sectionHeight + 0
+  #sectionHeight = 540 if sectionHeight > 540
+  $(".container.body > .section").css("min-height", sectionHeight)
+  $("#home-section").css("min-height", homeSectionHeight)
   $('[data-spy="scroll"]').each(() ->
     $(this).scrollspy('refresh')
   )
@@ -57,4 +61,6 @@ $(".btn-navbar").bind 'click', () ->
     $(".btn-navbar").trigger('click')
 
 
-
+Tapangi.initializeBackToTop  = ()->
+  $(".back-to-top").click (e)->
+    window.location.hash = "";

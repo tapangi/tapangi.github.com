@@ -20,20 +20,29 @@
   font-style: normal; }
 
 .container.body > div {
-  padding-top: 145px;
   font-size: 16px;
-  line-height: 24px; }
+  line-height: 24px;
+  position: relative; }
 .container .section {
-  color: #666766; }
+  color: #666766;
+  border-bottom: 1px solid #aaadb3; }
+  .container .section .heading {
+    margin-bottom: 5px; }
+    .container .section .heading > div {
+      vertical-align: top;
+      float: left; }
   .container .section > h3 {
-    margin-left: 110px;
-    margin-right: 110px;
+    margin-left: 140px;
+    margin-right: 140px;
     font-size: 22px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    margin-top: -70px; }
   .container .section > p {
-    margin-left: 110px;
-    margin-right: 110px;
-    font-size: 14px; }
+    margin-left: 140px;
+    margin-right: 140px;
+    font-size: 14px;
+    min-height: 70px;
+    margin-bottom: 30px; }
   .container .section .side-label {
     width: 130px;
     color: #0d78bf;
@@ -65,8 +74,8 @@ p, button {
   margin-top: 20px; }
   .sub-section .carousel {
     height: 280px;
-    margin-left: 105px;
-    margin-right: 105px;
+    margin-left: 130px;
+    margin-right: 130px;
     background: #e2e2e2; }
     .sub-section .carousel .item {
       margin-top: 25px;
@@ -106,6 +115,34 @@ p, button {
         text-decoration: none;
         opacity: 0.9;
         filter: alpha(opacity=90); }
+
+.hidden {
+  display: none;
+  visibility: hidden; }
+
+.visible-phone {
+  display: none !important; }
+
+.visible-tablet {
+  display: none !important; }
+
+.hidden-desktop {
+  display: none !important; }
+
+.back-to-top {
+  position: absolute;
+  width: 42px;
+  height: 37px;
+  background: url(../img/tapangi-back-to-top.png) center center no-repeat;
+  background-size: contain;
+  bottom: 0;
+  right: 0px;
+  opacity: .5;
+  cursor: pointer; }
+
+.break {
+  height: 125px;
+  margin-top: -125px; }
 
 .navbar {
   color: #5d636f; }
@@ -178,26 +215,27 @@ p, button {
         background: #ffffff;
         color: #1a51aa; }
 
-#home {
-  padding-top: 125px; }
-  #home p {
-    font-family: 'TitilliumText22LThin';
-    font-size: 45px;
-    line-height: 60px;
-    margin-left: 180px;
-    padding-top: 25px;
-    max-width: 550px; }
-    #home p a {
-      text-decoration: none;
-      color: #6e747e;
-      background-color: #dbff68; }
-      #home p a:active {
-        text-decoration: none; }
-    #home p img {
-      vertical-align: middle;
-      margin-bottom: 35px; }
+#home-section p {
+  font-family: 'TitilliumText22LThin';
+  font-size: 45px;
+  line-height: 60px;
+  margin-left: 180px;
+  padding-top: 25px;
+  max-width: 550px; }
+  #home-section p a {
+    text-decoration: none;
+    color: #6e747e;
+    background-color: #dbff68; }
+    #home-section p a:active {
+      text-decoration: none; }
+  #home-section p img {
+    vertical-align: middle;
+    margin-bottom: 35px; }
 
-#what .sub-section #what-disc {
+#home {
+  margin-top: 0px; }
+
+#what-section .sub-section #what-disc {
   background: url(../img/tapangi-disc-background.png) center center no-repeat;
   width: 221px;
   height: 221px;
@@ -206,77 +244,85 @@ p, button {
   border-radius: 120px;
   box-shadow: 1px 1px 10px 2px rgba(50, 50, 50, 0.3);
   margin-top: 20px;
-  margin-left: 115px; }
-  #what .sub-section #what-disc.social-active .highlight {
+  margin-left: 140px; }
+  #what-section .sub-section #what-disc .indicator {
+    width: 28px;
+    height: 36px;
+    position: absolute;
+    top: 92px;
+    right: -8px;
+    background: url(../img/tapangi-disc-indicator.png) center center no-repeat;
+    display: block; }
+  #what-section .sub-section #what-disc.social-active .highlight {
     background-image: url(../img/tapangi-disc-bg-social-active.png);
     -webkit-transform: rotate(120deg);
     -moz-transform: rotate(120deg);
     -ms-transform: rotate(120deg);
     -o-transform: rotate(120deg);
     transform: rotate(120deg); }
-    #what .sub-section #what-disc.social-active .highlight .disc-icon {
+    #what-section .sub-section #what-disc.social-active .highlight .disc-icon {
       -webkit-transform: rotate(-120deg);
       -moz-transform: rotate(-120deg);
       -ms-transform: rotate(-120deg);
       -o-transform: rotate(-120deg);
       transform: rotate(-120deg); }
-      #what .sub-section #what-disc.social-active .highlight .disc-icon.disc-icon-social {
+      #what-section .sub-section #what-disc.social-active .highlight .disc-icon.disc-icon-social {
         background: url(../img/tapangi-icon-social-active.png) center center no-repeat; }
-  #what .sub-section #what-disc.mobile-active .highlight {
+  #what-section .sub-section #what-disc.mobile-active .highlight {
     background-image: url(../img/tapangi-disc-bg-mobile-active.png);
     -webkit-transform: rotate(240deg);
     -moz-transform: rotate(240deg);
     -ms-transform: rotate(240deg);
     -o-transform: rotate(240deg);
     transform: rotate(240deg); }
-    #what .sub-section #what-disc.mobile-active .highlight .disc-icon {
+    #what-section .sub-section #what-disc.mobile-active .highlight .disc-icon {
       -webkit-transform: rotate(-240deg);
       -moz-transform: rotate(-240deg);
       -ms-transform: rotate(-240deg);
       -o-transform: rotate(-240deg);
       transform: rotate(-240deg); }
-      #what .sub-section #what-disc.mobile-active .highlight .disc-icon.disc-icon-mobile {
+      #what-section .sub-section #what-disc.mobile-active .highlight .disc-icon.disc-icon-mobile {
         background: url(../img/tapangi-icon-mobile-active.png) center center no-repeat; }
-  #what .sub-section #what-disc.cloud-active .highlight {
+  #what-section .sub-section #what-disc.cloud-active .highlight {
     background-image: url(../img/tapangi-disc-bg-cloud-active.png);
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
     -ms-transform: rotate(360deg);
     -o-transform: rotate(360deg);
     transform: rotate(360deg); }
-    #what .sub-section #what-disc.cloud-active .highlight .disc-icon {
+    #what-section .sub-section #what-disc.cloud-active .highlight .disc-icon {
       -webkit-transform: rotate(360deg);
       -moz-transform: rotate(360deg);
       -ms-transform: rotate(360deg);
       -o-transform: rotate(360deg);
       transform: rotate(360deg); }
-      #what .sub-section #what-disc.cloud-active .highlight .disc-icon.disc-icon-cloud {
+      #what-section .sub-section #what-disc.cloud-active .highlight .disc-icon.disc-icon-cloud {
         background: url(../img/tapangi-icon-cloud-active.png) center center no-repeat; }
-  #what .sub-section #what-disc.social-over .highlight {
+  #what-section .sub-section #what-disc.social-over .highlight {
     background-image: url(../img/tapangi-disc-bg-social-hover.png); }
-    #what .sub-section #what-disc.social-over .highlight .disc-icon-social {
+    #what-section .sub-section #what-disc.social-over .highlight .disc-icon-social {
       background: url(../img/tapangi-icon-social-hover.png) center center no-repeat; }
-  #what .sub-section #what-disc.social-over.down .highlight {
+  #what-section .sub-section #what-disc.social-over.down .highlight {
     background-image: url(../img/tapangi-disc-bg-social-down.png); }
-    #what .sub-section #what-disc.social-over.down .highlight .disc-icon-social {
+    #what-section .sub-section #what-disc.social-over.down .highlight .disc-icon-social {
       background: url(../img/tapangi-icon-social-down.png) center center no-repeat; }
-  #what .sub-section #what-disc.mobile-over .highlight {
+  #what-section .sub-section #what-disc.mobile-over .highlight {
     background: url(../img/tapangi-disc-bg-mobile-hover.png) center center no-repeat; }
-    #what .sub-section #what-disc.mobile-over .highlight .disc-icon-mobile {
+    #what-section .sub-section #what-disc.mobile-over .highlight .disc-icon-mobile {
       background: url(../img/tapangi-icon-mobile-hover.png) center center no-repeat; }
-  #what .sub-section #what-disc.mobile-over.down .highlight {
+  #what-section .sub-section #what-disc.mobile-over.down .highlight {
     background: url(../img/tapangi-disc-bg-mobile-down.png) center center no-repeat; }
-    #what .sub-section #what-disc.mobile-over.down .highlight .disc-icon-mobile {
+    #what-section .sub-section #what-disc.mobile-over.down .highlight .disc-icon-mobile {
       background: url(../img/tapangi-icon-mobile-down.png) center center no-repeat; }
-  #what .sub-section #what-disc.cloud-over .highlight {
+  #what-section .sub-section #what-disc.cloud-over .highlight {
     background: url(../img/tapangi-disc-bg-cloud-hover.png) center center no-repeat; }
-    #what .sub-section #what-disc.cloud-over .highlight .disc-icon-cloud {
+    #what-section .sub-section #what-disc.cloud-over .highlight .disc-icon-cloud {
       background: url(../img/tapangi-icon-cloud-hover.png) center center no-repeat; }
-  #what .sub-section #what-disc.cloud-over.down .highlight {
+  #what-section .sub-section #what-disc.cloud-over.down .highlight {
     background: url(../img/tapangi-disc-bg-cloud-down.png) center center no-repeat; }
-    #what .sub-section #what-disc.cloud-over.down .highlight .disc-icon-cloud {
+    #what-section .sub-section #what-disc.cloud-over.down .highlight .disc-icon-cloud {
       background: url(../img/tapangi-icon-cloud-down.png) center center no-repeat; }
-  #what .sub-section #what-disc .highlight {
+  #what-section .sub-section #what-disc .highlight {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -293,19 +339,19 @@ p, button {
     border-radius: 120px;
     background-position: center center;
     background-repeat: no-repeat; }
-    #what .sub-section #what-disc .highlight.rotating {
+    #what-section .sub-section #what-disc .highlight.rotating {
       -webkit-transition: 0.6s ease-in-out;
       -moz-transition: 0.6s ease-in-out;
       -ms-transition: 0.6s ease-in-out;
       -o-transition: 0.6s ease-in-out;
       transition: 0.6s ease-in-out; }
-    #what .sub-section #what-disc .highlight .prongs {
+    #what-section .sub-section #what-disc .highlight .prongs {
       background: url(../img/tapangi-disc-prongs.png) center center no-repeat;
       width: 221px;
       height: 221px;
       position: absolute;
       border-radius: 120px; }
-    #what .sub-section #what-disc .highlight > .disc-icon {
+    #what-section .sub-section #what-disc .highlight > .disc-icon {
       -webkit-transition: .6s ease-in-out center;
       -moz-transition: .6s ease-in-out center;
       -ms-transition: .6s ease-in-out center;
@@ -315,21 +361,21 @@ p, button {
       -moz-transform: rotate(0deg);
       -ms-transform: rotate(0deg);
       -o-transform: rotate(0deg); }
-    #what .sub-section #what-disc .highlight .disc-icon-social {
+    #what-section .sub-section #what-disc .highlight .disc-icon-social {
       background: url(../img/tapangi-icon-social.png) center center no-repeat;
       width: 75px;
       height: 75px;
       position: absolute;
       top: 20px;
       left: 40px; }
-    #what .sub-section #what-disc .highlight .disc-icon-mobile {
+    #what-section .sub-section #what-disc .highlight .disc-icon-mobile {
       background: url(../img/tapangi-icon-mobile.png) center center no-repeat;
       width: 75px;
       height: 75px;
       position: absolute;
       top: 125px;
       left: 40px; }
-    #what .sub-section #what-disc .highlight .disc-icon-cloud {
+    #what-section .sub-section #what-disc .highlight .disc-icon-cloud {
       background: url(../img/tapangi-icon-cloud.png) center center no-repeat;
       width: 75px;
       height: 75px;
@@ -337,15 +383,15 @@ p, button {
       top: 70px;
       right: 10px; }
 
-#how .sub-section #how-disc {
+#how-section .sub-section #how-disc {
   background: url(../img/tapangi-how-disc-bg.png) center center no-repeat;
   width: 237px;
   height: 237px;
   position: absolute;
   z-index: 10;
   margin-top: 20px;
-  margin-left: 115px; }
-  #how .sub-section #how-disc .indicator {
+  margin-left: 130px; }
+  #how-section .sub-section #how-disc .indicator {
     width: 28px;
     height: 36px;
     position: absolute;
@@ -353,136 +399,136 @@ p, button {
     right: 0;
     background: url(../img/tapangi-disc-indicator.png) center center no-repeat;
     display: block; }
-  #how .sub-section #how-disc.analyze-active .highlight {
+  #how-section .sub-section #how-disc.analyze-active .highlight {
     background-image: url(../img/tapangi-how-disc-analyze-active.png);
     -webkit-transform: rotate(126deg);
     -moz-transform: rotate(126deg);
     -ms-transform: rotate(126deg);
     -o-transform: rotate(126deg);
     transform: rotate(126deg); }
-    #how .sub-section #how-disc.analyze-active .highlight .disc-icon {
+    #how-section .sub-section #how-disc.analyze-active .highlight .disc-icon {
       -webkit-transform: rotate(-126deg);
       -moz-transform: rotate(-126deg);
       -ms-transform: rotate(-126deg);
       -o-transform: rotate(-126deg);
       transform: rotate(-126deg); }
-      #how .sub-section #how-disc.analyze-active .highlight .disc-icon.disc-icon-analyze {
+      #how-section .sub-section #how-disc.analyze-active .highlight .disc-icon.disc-icon-analyze {
         background-image: url(../img/tapangi-icon-analyze-active.png); }
-  #how .sub-section #how-disc.architect-active .highlight {
+  #how-section .sub-section #how-disc.architect-active .highlight {
     background-image: url(../img/tapangi-how-disc-architect-active.png);
     -webkit-transform: rotate(54deg);
     -moz-transform: rotate(54deg);
     -ms-transform: rotate(54deg);
     -o-transform: rotate(54deg);
     transform: rotate(54deg); }
-    #how .sub-section #how-disc.architect-active .highlight .disc-icon {
+    #how-section .sub-section #how-disc.architect-active .highlight .disc-icon {
       -webkit-transform: rotate(-54deg);
       -moz-transform: rotate(-54deg);
       -ms-transform: rotate(-54deg);
       -o-transform: rotate(-54deg);
       transform: rotate(-54deg); }
-      #how .sub-section #how-disc.architect-active .highlight .disc-icon.disc-icon-architect {
+      #how-section .sub-section #how-disc.architect-active .highlight .disc-icon.disc-icon-architect {
         background-image: url(../img/tapangi-icon-architect-active.png); }
-  #how .sub-section #how-disc.build-active .highlight {
+  #how-section .sub-section #how-disc.build-active .highlight {
     background-image: url(../img/tapangi-how-disc-build-active.png);
     -webkit-transform: rotate(-18deg);
     -moz-transform: rotate(-18deg);
     -ms-transform: rotate(-18deg);
     -o-transform: rotate(-18deg);
     transform: rotate(-18deg); }
-    #how .sub-section #how-disc.build-active .highlight .disc-icon {
+    #how-section .sub-section #how-disc.build-active .highlight .disc-icon {
       -webkit-transform: rotate(18deg);
       -moz-transform: rotate(18deg);
       -ms-transform: rotate(18deg);
       -o-transform: rotate(18deg);
       transform: rotate(18deg); }
-      #how .sub-section #how-disc.build-active .highlight .disc-icon.disc-icon-build {
+      #how-section .sub-section #how-disc.build-active .highlight .disc-icon.disc-icon-build {
         background-image: url(../img/tapangi-icon-build-active.png); }
-  #how .sub-section #how-disc.launch-active .highlight {
+  #how-section .sub-section #how-disc.launch-active .highlight {
     background-image: url(../img/tapangi-how-disc-launch-active.png);
     -webkit-transform: rotate(-90deg);
     -moz-transform: rotate(-90deg);
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
     transform: rotate(-90deg); }
-    #how .sub-section #how-disc.launch-active .highlight .disc-icon {
+    #how-section .sub-section #how-disc.launch-active .highlight .disc-icon {
       -webkit-transform: rotate(90deg);
       -moz-transform: rotate(90deg);
       -ms-transform: rotate(90deg);
       -o-transform: rotate(90deg);
       transform: rotate(90deg); }
-      #how .sub-section #how-disc.launch-active .highlight .disc-icon.disc-icon-launch {
+      #how-section .sub-section #how-disc.launch-active .highlight .disc-icon.disc-icon-launch {
         background-image: url(../img/tapangi-icon-launch-active.png); }
-  #how .sub-section #how-disc.scale-active .highlight {
+  #how-section .sub-section #how-disc.scale-active .highlight {
     background-image: url(../img/tapangi-how-disc-scale-active.png);
     -webkit-transform: rotate(-162deg);
     -moz-transform: rotate(-162deg);
     -ms-transform: rotate(-162deg);
     -o-transform: rotate(-162deg);
     transform: rotate(-162deg); }
-    #how .sub-section #how-disc.scale-active .highlight .disc-icon {
+    #how-section .sub-section #how-disc.scale-active .highlight .disc-icon {
       -webkit-transform: rotate(162deg);
       -moz-transform: rotate(162deg);
       -ms-transform: rotate(162deg);
       -o-transform: rotate(162deg);
       transform: rotate(162deg); }
-      #how .sub-section #how-disc.scale-active .highlight .disc-icon.disc-icon-scale {
+      #how-section .sub-section #how-disc.scale-active .highlight .disc-icon.disc-icon-scale {
         background-image: url(../img/tapangi-icon-scale-active.png); }
-  #how .sub-section #how-disc.kick-off-active .indicator {
+  #how-section .sub-section #how-disc.kick-off-active .indicator {
     display: none; }
-  #how .sub-section #how-disc.kick-off-active .center-icon.center-icon-communicate {
+  #how-section .sub-section #how-disc.kick-off-active .center-icon.center-icon-communicate {
     display: none; }
-  #how .sub-section #how-disc.kick-off-active .center-icon.center-icon-kick-off {
+  #how-section .sub-section #how-disc.kick-off-active .center-icon.center-icon-kick-off {
     display: block; }
-  #how .sub-section #how-disc.communicate-active .indicator {
+  #how-section .sub-section #how-disc.communicate-active .indicator {
     display: none; }
-  #how .sub-section #how-disc.communicate-active .center-icon.center-icon-communicate {
+  #how-section .sub-section #how-disc.communicate-active .center-icon.center-icon-communicate {
     background-image: url(../img/tapangi-icon-communicate-active.png); }
-  #how .sub-section #how-disc.analyze-over .highlight {
+  #how-section .sub-section #how-disc.analyze-over .highlight {
     background-image: url(../img/tapangi-how-disc-analyze-over.png); }
-    #how .sub-section #how-disc.analyze-over .highlight .disc-icon.disc-icon-analyze {
+    #how-section .sub-section #how-disc.analyze-over .highlight .disc-icon.disc-icon-analyze {
       background-image: url(../img/tapangi-icon-analyze-down.png); }
-  #how .sub-section #how-disc.analyze-over.down .highlight {
+  #how-section .sub-section #how-disc.analyze-over.down .highlight {
     background-image: url(../img/tapangi-how-disc-analyze-down.png); }
-    #how .sub-section #how-disc.analyze-over.down .highlight .disc-icon.disc-icon-analyze {
+    #how-section .sub-section #how-disc.analyze-over.down .highlight .disc-icon.disc-icon-analyze {
       background-image: url(../img/tapangi-icon-analyze-down.png); }
-  #how .sub-section #how-disc.architect-over .highlight {
+  #how-section .sub-section #how-disc.architect-over .highlight {
     background-image: url(../img/tapangi-how-disc-architect-over.png); }
-    #how .sub-section #how-disc.architect-over .highlight .disc-icon.disc-icon-architect {
+    #how-section .sub-section #how-disc.architect-over .highlight .disc-icon.disc-icon-architect {
       background-image: url(../img/tapangi-icon-architect-down.png); }
-  #how .sub-section #how-disc.architect-over.down .highlight {
+  #how-section .sub-section #how-disc.architect-over.down .highlight {
     background-image: url(../img/tapangi-how-disc-architect-down.png); }
-    #how .sub-section #how-disc.architect-over.down .highlight .disc-icon.disc-icon-architect {
+    #how-section .sub-section #how-disc.architect-over.down .highlight .disc-icon.disc-icon-architect {
       background-image: url(../img/tapangi-icon-architect-down.png); }
-  #how .sub-section #how-disc.build-over .highlight {
+  #how-section .sub-section #how-disc.build-over .highlight {
     background-image: url(../img/tapangi-how-disc-build-over.png); }
-    #how .sub-section #how-disc.build-over .highlight .disc-icon.disc-icon-build {
+    #how-section .sub-section #how-disc.build-over .highlight .disc-icon.disc-icon-build {
       background-image: url(../img/tapangi-icon-build-down.png); }
-  #how .sub-section #how-disc.build-over.down .highlight {
+  #how-section .sub-section #how-disc.build-over.down .highlight {
     background-image: url(../img/tapangi-how-disc-build-down.png); }
-    #how .sub-section #how-disc.build-over.down .highlight .disc-icon.disc-icon-build {
+    #how-section .sub-section #how-disc.build-over.down .highlight .disc-icon.disc-icon-build {
       background-image: url(../img/tapangi-icon-build-down.png); }
-  #how .sub-section #how-disc.launch-over .highlight {
+  #how-section .sub-section #how-disc.launch-over .highlight {
     background-image: url(../img/tapangi-how-disc-launch-over.png); }
-    #how .sub-section #how-disc.launch-over .highlight .disc-icon.disc-icon-launch {
+    #how-section .sub-section #how-disc.launch-over .highlight .disc-icon.disc-icon-launch {
       background-image: url(../img/tapangi-icon-launch-down.png); }
-  #how .sub-section #how-disc.launch-over.down .highlight {
+  #how-section .sub-section #how-disc.launch-over.down .highlight {
     background-image: url(../img/tapangi-how-disc-launch-down.png); }
-    #how .sub-section #how-disc.launch-over.down .highlight .disc-icon.disc-icon-launch {
+    #how-section .sub-section #how-disc.launch-over.down .highlight .disc-icon.disc-icon-launch {
       background-image: url(../img/tapangi-icon-launch-down.png); }
-  #how .sub-section #how-disc.scale-over .highlight {
+  #how-section .sub-section #how-disc.scale-over .highlight {
     background-image: url(../img/tapangi-how-disc-scale-over.png); }
-    #how .sub-section #how-disc.scale-over .highlight .disc-icon.disc-icon-scale {
+    #how-section .sub-section #how-disc.scale-over .highlight .disc-icon.disc-icon-scale {
       background-image: url(../img/tapangi-icon-scale-down.png); }
-  #how .sub-section #how-disc.scale-over.down .highlight {
+  #how-section .sub-section #how-disc.scale-over.down .highlight {
     background-image: url(../img/tapangi-how-disc-scale-down.png); }
-    #how .sub-section #how-disc.scale-over.down .highlight .disc-icon.disc-icon-scale {
+    #how-section .sub-section #how-disc.scale-over.down .highlight .disc-icon.disc-icon-scale {
       background-image: url(../img/tapangi-icon-scale-down.png); }
-  #how .sub-section #how-disc.communicate-over .center-icon.center-icon-communicate {
+  #how-section .sub-section #how-disc.communicate-over .center-icon.center-icon-communicate {
     background-image: url(../img/tapangi-icon-communicate-over.png); }
-  #how .sub-section #how-disc.communicate-over.down .center-icon.center-icon-communicate {
+  #how-section .sub-section #how-disc.communicate-over.down .center-icon.center-icon-communicate {
     background-image: url(../img/tapangi-icon-communicate-down.png); }
-  #how .sub-section #how-disc .highlight {
+  #how-section .sub-section #how-disc .highlight {
     -webkit-transform: rotate(0deg);
     -moz-transform: rotate(0deg);
     -ms-transform: rotate(0deg);
@@ -498,18 +544,18 @@ p, button {
     position: absolute;
     background-position: center center;
     background-repeat: no-repeat; }
-    #how .sub-section #how-disc .highlight.rotating {
+    #how-section .sub-section #how-disc .highlight.rotating {
       -webkit-transition: 0.6s ease-in-out;
       -moz-transition: 0.6s ease-in-out;
       -ms-transition: 0.6s ease-in-out;
       -o-transition: 0.6s ease-in-out;
       transition: 0.6s ease-in-out; }
-    #how .sub-section #how-disc .highlight .prongs {
+    #how-section .sub-section #how-disc .highlight .prongs {
       background: url(../img/tapangi-how-disc-prongs.png) center center no-repeat;
       width: 237px;
       height: 237px;
       position: absolute; }
-    #how .sub-section #how-disc .highlight > .disc-icon {
+    #how-section .sub-section #how-disc .highlight > .disc-icon {
       -webkit-transition: .6s ease-in-out center;
       -moz-transition: .6s ease-in-out center;
       -ms-transition: .6s ease-in-out center;
@@ -525,28 +571,28 @@ p, button {
       background-size: 50px 50px;
       background-position: center center;
       background-repeat: no-repeat; }
-      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-analyze {
+      #how-section .sub-section #how-disc .highlight > .disc-icon.disc-icon-analyze {
         background-image: url(../img/tapangi-icon-analyze.png);
         top: 28px;
         left: 46px;
         background-size: 45px 45px; }
-      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-architect {
+      #how-section .sub-section #how-disc .highlight > .disc-icon.disc-icon-architect {
         background-image: url(../img/tapangi-icon-architect.png);
         top: 28px;
         left: 139px; }
-      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-build {
+      #how-section .sub-section #how-disc .highlight > .disc-icon.disc-icon-build {
         background-image: url(../img/tapangi-icon-build.png);
         top: 116px;
         right: 17px; }
-      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-launch {
+      #how-section .sub-section #how-disc .highlight > .disc-icon.disc-icon-launch {
         background-image: url(../img/tapangi-icon-launch.png);
         top: 170px;
         right: 90px; }
-      #how .sub-section #how-disc .highlight > .disc-icon.disc-icon-scale {
+      #how-section .sub-section #how-disc .highlight > .disc-icon.disc-icon-scale {
         background-image: url(../img/tapangi-icon-scale.png);
         top: 115px;
         left: 15px; }
-  #how .sub-section #how-disc > .center-icon {
+  #how-section .sub-section #how-disc > .center-icon {
     position: absolute;
     top: 67px;
     left: 68px;
@@ -557,31 +603,31 @@ p, button {
     -ms-transform: rotate(0deg);
     -o-transform: rotate(0deg);
     transform: rotate(0deg); }
-    #how .sub-section #how-disc > .center-icon.center-icon-communicate {
+    #how-section .sub-section #how-disc > .center-icon.center-icon-communicate {
       background-image: url(../img/tapangi-icon-communicate.png); }
-    #how .sub-section #how-disc > .center-icon.center-icon-kick-off {
+    #how-section .sub-section #how-disc > .center-icon.center-icon-kick-off {
       background-image: url(../img/tapangi-icon-kick-off-active.png);
       display: none; }
 
-#who > p, #who > h3 {
+#who-section > p, #who-section > h3 {
   margin-left: 140px; }
-#who .sub-section {
+#who-section .sub-section {
   padding-bottom: 30px; }
-  #who .sub-section > div {
+  #who-section .sub-section > div {
     display: inline-block;
     vertical-align: top; }
-  #who .sub-section .description {
+  #who-section .sub-section .description {
     padding: 10px;
     width: 445px; }
-  #who .sub-section .photo {
+  #who-section .sub-section .photo {
     width: 335px;
     height: 220px;
     background-size: cover;
     background-positon: center center;
     background-repeat: no-repeat; }
-    #who .sub-section .photo.piotr {
+    #who-section .sub-section .photo.piotr {
       background-image: url(../img/piotr.jpg); }
-    #who .sub-section .photo.liz {
+    #who-section .sub-section .photo.liz {
       background-image: url(../img/liz.jpg); }
 
 .info {
@@ -1529,61 +1575,56 @@ form li.complex p.error {
 .rtl #errorLi * {
   text-align: center; }
 
-#contact .heading {
-  margin-bottom: 5px; }
-  #contact .heading > div {
-    vertical-align: top;
-    float: left; }
-#contact .icon-email {
+#contact-section .icon-email {
   background: url(../img/tapangi-icon-email.png) center center no-repeat;
   width: 130px;
   height: 85px;
   margin-left: 4px; }
-#contact .icon-twitter {
+#contact-section .icon-twitter {
   background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
   width: 130px;
   height: 85px;
   margin-left: 4px; }
-#contact .tweets {
+#contact-section .tweets {
   padding: 1px;
   height: 83px;
   margin-left: 4px;
   overflow: hidden;
   background-color: #555b67;
   color: #dbff68; }
-  #contact .tweets .feedcell {
+  #contact-section .tweets .feedcell {
     height: 85px;
     font-size: 13px; }
-    #contact .tweets .feedcell .feedtext {
+    #contact-section .tweets .feedcell .feedtext {
       width: 450px;
       padding-top: 15px; }
-      #contact .tweets .feedcell .feedtext .user {
+      #contact-section .tweets .feedcell .feedtext .user {
         mergin-right: 3px; }
-    #contact .tweets .feedcell * {
+    #contact-section .tweets .feedcell * {
       float: left !important; }
-    #contact .tweets .feedcell .authorimg {
+    #contact-section .tweets .feedcell .authorimg {
       display: block;
       padding: 18px; }
-#contact .row.sub-section > div {
+#contact-section .row.sub-section > div {
   display: inline-block; }
-#contact iframe {
+#contact-section iframe {
   width: 0px;
   height: 0px;
   visibility: hidden; }
-#contact form input, #contact form textarea {
+#contact-section form input, #contact-section form textarea {
   margin: 0;
   padding: 0;
   border: 0;
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0; }
-#contact form ul {
+#contact-section form ul {
   width: 600px; }
-  #contact form ul li {
+  #contact-section form ul li {
     margin: 0px;
     margin-bottom: 5px;
     padding: 0; }
-    #contact form ul li label.desc {
+    #contact-section form ul li label.desc {
       vertical-align: top;
       color: #0D78BF;
       background-color: #E2E2E2;
@@ -1595,24 +1636,24 @@ form li.complex p.error {
       display: inline-block;
       font-size: 15px;
       line-height: 19px; }
-    #contact form ul li .field-body {
+    #contact-section form ul li .field-body {
       background-color: #E2E2E2;
       display: inline-block;
       padding: 14px;
       margin: 0; }
-      #contact form ul li .field-body input {
+      #contact-section form ul li .field-body input {
         height: 35px;
         padding: 10px;
         border: 1px solid #E2E2E2; }
-      #contact form ul li .field-body .fn, #contact form ul li .field-body .ln {
+      #contact-section form ul li .field-body .fn, #contact-section form ul li .field-body .ln {
         width: 180px; }
-      #contact form ul li .field-body .org, #contact form ul li .field-body .email, #contact form ul li .field-body .message {
+      #contact-section form ul li .field-body .org, #contact-section form ul li .field-body .email, #contact-section form ul li .field-body .message {
         width: 412px; }
-      #contact form ul li .field-body .message {
+      #contact-section form ul li .field-body .message {
         padding: 10px; }
-    #contact form ul li .submit {
+    #contact-section form ul li .submit {
       margin-left: 135px; }
-      #contact form ul li .submit [type=submit] {
+      #contact-section form ul li .submit [type=submit] {
         padding-top: 30px;
         padding-bottom: 30px;
         width: 130px;
@@ -1621,18 +1662,14 @@ form li.complex p.error {
 @media (max-width: 979px) and (min-width: 768px) {
   .container {
     width: 740px; }
-    .container.body > div {
-      padding-top: 20px; }
-    .container .section > h3, .container .section > p {
-      margin-left: 110px;
-      margin-right: 110px; }
-    .container .section .sub-section .carousel {
-      margin-left: 105px;
-      margin-right: 105px; }
-      .container .section .sub-section .carousel .item {
-        margin-left: 245px; }
-        .container .section .sub-section .carousel .item p {
-          padding-right: 25px; } }
+    .container .section .sub-section .carousel .item {
+      margin-left: 245px; }
+      .container .section .sub-section .carousel .item p {
+        padding-right: 25px; }
+
+  .break {
+    height: 0px;
+    margin: 0px; } }
 @media (max-width: 979px) and (min-width: 768px) {
   .navbar.navbar-fixed-top {
     position: static; }
@@ -1646,30 +1683,27 @@ form li.complex p.error {
     width: 38px;
     height: 54px; } }
 @media (max-width: 979px) and (min-width: 768px) {
-  .container.body #home {
-    padding-top: 125px;
-    margin-top: -125px; }
-    .container.body #home p {
+  .container.body #home-section {
+    padding-top: 0px; }
+    .container.body #home-section p {
       margin-left: 110px; } }
 @media (max-width: 979px) and (min-width: 768px) {
-  .container #what .sub-section .carousel {
+  .container #what-section .sub-section .carousel {
     height: 310px; }
-    .container #what .sub-section .carousel .carousel-control {
+    .container #what-section .sub-section .carousel .carousel-control {
       padding-top: 140px; } }
 @media (max-width: 979px) and (min-width: 768px) {
-  .container #who p {
-    margin-left: 135px; }
-  .container #who .sub-section .description {
+  .container #who-section .sub-section .description {
     width: 330px; }
-  .container #who .sub-section .photo {
+  .container #who-section .sub-section .photo {
     width: 250px;
     height: 164px; } }
 @media (max-width: 979px) and (min-width: 768px) {
-  .container #contact .icon-email {
+  .container #contact-section .icon-email {
     width: 100px; }
-  .container #contact .icon-twitter {
+  .container #contact-section .icon-twitter {
     width: 100px; }
-  .container #contact .tweets .feedcell .feedtext {
+  .container #contact-section .tweets .feedcell .feedtext {
     width: 310px; } }
 @media (max-width: 767px) {
   .container {
@@ -1755,33 +1789,33 @@ form li.complex p.error {
       -moz-border-radius: 0px;
       border-radius: 0px; } }
 @media (max-width: 767px) {
-  .container #home {
+  .container #home-section {
     padding-top: 125px;
     margin-top: -125px; }
-    .container #home p {
+    .container #home-section p {
       font-size: 40px;
       margin-left: 40px;
       margin-right: 20px;
       padding-top: 10px; } }
 @media (max-width: 767px) {
-  .container #what .sub-section .carousel {
+  .container #what-section .sub-section .carousel {
     height: 450px; }
-    .container #what .sub-section .carousel .carousel-inner .item {
+    .container #what-section .sub-section .carousel .carousel-inner .item {
       margin-top: 200px; }
-    .container #what .sub-section .carousel .carousel-control {
+    .container #what-section .sub-section .carousel .carousel-control {
       padding-top: 140px; } }
 @media (max-width: 767px) {
-  .container #who p {
+  .container #who-section p {
     margin-left: 135px; }
-  .container #who .sub-section .description {
+  .container #who-section .sub-section .description {
     width: 330px; }
-  .container #who .sub-section .photo {
+  .container #who-section .sub-section .photo {
     width: 250px;
     height: 164px; } }
 @media (max-width: 767px) {
-  .container #contact .icon-email {
+  .container #contact-section .icon-email {
     width: 100px; }
-  .container #contact .icon-twitter {
+  .container #contact-section .icon-twitter {
     width: 100px; }
-  .container #contact .tweets .feedcell .feedtext {
+  .container #contact-section .tweets .feedcell .feedtext {
     width: 310px; } }

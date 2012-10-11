@@ -2,7 +2,7 @@
   .container {
     &.body {
       > div {
-        padding-top: 20px;
+       // padding-top: 20px;
       }
     }
     width: 740px;
@@ -10,13 +10,13 @@
     .section {
 
       > h3, > p {
-        margin-left: 110px;
-        margin-right: 110px;
+        //margin-left: 110px;
+        //margin-right: 110px;
       }
       .sub-section {
         .carousel {
-          margin-left: 105px;
-          margin-right: 105px;
+          //margin-left: 105px;
+         // margin-right: 105px;
           .item {
             margin-left: 245px;
             p {
@@ -26,6 +26,10 @@
         }
       }
     }
+  }
+  .break {
+    height: 0px;
+    margin: 0px;
   }
 }
 

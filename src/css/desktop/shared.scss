@@ -33,28 +33,40 @@
 
 .container {
   &.body > div {
-    padding-top: 145px;
-
+    //padding-top: 145px;
     font-size: 16px;
     line-height: 24px;
-
+    position: relative;
     .intro {
 
     }
   }
   .section {
+
     color: #666766;
+    border-bottom: 1px solid #aaadb3;
+
+    .heading {
+      margin-bottom: 5px;
+      > div {
+        vertical-align: top;
+        float:left;
+      }
+    }
     > h3 {
-      margin-left: 110px;
-      margin-right: 110px;
+      margin-left: 140px;
+      margin-right: 140px;
       font-size: 22px;
       margin-bottom: 10px;
+      margin-top: -70px;
     }
 
     > p {
-      margin-left: 110px;
-      margin-right: 110px;
+      margin-left: 140px;
+      margin-right: 140px;
       font-size: 14px;
+      min-height: 70px;
+      margin-bottom: 30px;
     }
     .side-label {
       width: 130px;
@@ -69,6 +81,7 @@
     .sub-section {
       border-top: 1px solid #aaadb3;
     }
+
   }
 }
 .row {
@@ -89,8 +102,8 @@ p, button {
   margin-top: 20px;
   .carousel {
     height: 280px;
-    margin-left: 105px;
-    margin-right: 105px;
+    margin-left: 130px;
+    margin-right: 130px;
     background: #e2e2e2;
 
     .item {
@@ -160,3 +173,36 @@ p, button {
   transform: rotate($degrees);
 }
 
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.visible-phone {
+  display: none !important;
+}
+
+.visible-tablet {
+  display: none !important;
+}
+
+.hidden-desktop {
+  display: none !important;
+}
+
+.back-to-top {
+  position: absolute;
+  width: 42px;
+  height: 37px;
+  background: url(../img/tapangi-back-to-top.png) center center no-repeat;
+  background-size: contain;
+  bottom: 0;
+  right: 0px;
+  opacity: .5;
+  cursor: pointer;
+}
+.break {
+  height:125px;
+  margin-top: -125px;
+}
