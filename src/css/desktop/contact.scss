@@ -25,7 +25,11 @@
     color: #dbff68;
     .feedcell {
       height: 85px;
+      a{
+        background: none;
+        color: #08c;
 
+      }
       .feedtext {
         width:450px;
         padding-top:15px;

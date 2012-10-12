@@ -1,7 +1,81 @@
 @media (max-width: 767px) {
   .container {
     #how-section {
+      .sub-section {
+        margin-top: 235px;
+        padding-bottom:100px;
+        .carousel {
+          height: 220px;
+          .carousel-inner {
+            .item {
+              //margin-top: 200px;
+            }
 
+          }
+          .carousel-control {
+            padding-top: 100px;
+          }
+        }
+      }
+      #how-disc {
+        margin-top: -245px;
+        margin-left: 50%;
+        margin-right: 50%;
+        left: -111px;
+        .indicator {
+          top: 204px;
+          left: 106px;
+          @include rotation(90deg);
+        }
+
+        &.analyze-active {
+          .highlight {
+            @include rotation(216deg);
+            .disc-icon {
+              @include rotation(-216deg);
+            }
+
+          }
+        }
+
+        &.architect-active {
+          .highlight {
+            @include rotation(144deg);
+            .disc-icon {
+              @include rotation(-144deg);
+            }
+
+          }
+        }
+
+        &.build-active {
+          .highlight {
+            @include rotation(72deg);
+            .disc-icon {
+              @include rotation(-72deg);
+            }
+
+          }
+        }
+        &.launch-active {
+          .highlight {
+            @include rotation(0deg);
+            .disc-icon {
+              @include rotation(0deg);
+            }
+
+          }
+        }
+        &.scale-active {
+          .highlight {
+            @include rotation(-72deg);
+            .disc-icon {
+              @include rotation(72deg);
+            }
+
+          }
+        }
+      }
     }
   }
 }

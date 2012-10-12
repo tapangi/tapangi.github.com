@@ -15,7 +15,7 @@
       height:60px;
       .container {
         width: auto;
-
+        z-index: 1111;
         a.logo {
           float: left;
           width: 50px;
@@ -23,6 +23,7 @@
           background: url(../img/tapangi-logo.png) no-repeat;
           background-size: contain;
           margin-left: 5px;
+          z-index: 1122;
         }
 
       }
@@ -30,8 +31,9 @@
         > li {
           float: none;
           height: 60px;
+          display:block;
           > a {
-
+            display:block;
             padding-top: 20px;
             padding-bottom: 20px;
           }
@@ -53,7 +55,8 @@
     &.collapse, & {
       height: 0;
       overflow: hidden;
-
+      z-index: 1111;
+      top:0px;
 
     }
     .nav {

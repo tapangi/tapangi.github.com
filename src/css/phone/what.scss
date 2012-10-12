@@ -2,16 +2,59 @@
   .container {
     #what-section {
       .sub-section {
+        margin-top: 200px;
+        padding-bottom:100px;
         .carousel {
-          height: 450px;
+          height: 270px;
           .carousel-inner {
             .item {
-              margin-top: 200px;
+              //margin-top: 200px;
             }
 
           }
           .carousel-control {
-            padding-top: 140px;
+            padding-top: 120px;
+          }
+        }
+      }
+      #what-disc {
+        margin-top: -235px;
+        margin-left: 50%;
+        margin-right: 50%;
+        left: -111px;
+        .indicator {
+          top: 199px;
+          left: 97px;
+          @include rotation(90deg);
+        }
+        &.social-active {
+          .highlight {
+            @include rotation(210deg);
+            .disc-icon {
+              @include rotation(-210deg);
+            }
+
+          }
+        }
+
+        &.mobile-active {
+          .highlight {
+            @include rotation(330deg);
+            .disc-icon {
+              @include rotation(-330deg);
+
+            }
+
+          }
+        }
+
+        &.cloud-active {
+          .highlight {
+            @include rotation(450deg);
+            .disc-icon {
+              @include rotation(-450deg);
+            }
+
           }
         }
       }

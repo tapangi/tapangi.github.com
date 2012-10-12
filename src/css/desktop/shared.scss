@@ -34,7 +34,7 @@
 .container {
   &.body > div {
     //padding-top: 145px;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
     position: relative;
     .intro {
@@ -42,6 +42,19 @@
     }
   }
   .section {
+    a {
+      text-decoration: none;
+      color: #6e747e;
+      background-color: #dbff68;
+      &:active {
+        text-decoration: none;
+      }
+
+      img {
+        vertical-align: middle;
+        margin-bottom: 35px;
+      }
+    }
 
     color: #666766;
     border-bottom: 1px solid #aaadb3;
@@ -50,7 +63,7 @@
       margin-bottom: 5px;
       > div {
         vertical-align: top;
-        float:left;
+        float: left;
       }
     }
     > h3 {
@@ -66,7 +79,6 @@
       margin-right: 140px;
       font-size: 14px;
       min-height: 70px;
-      margin-bottom: 30px;
     }
     .side-label {
       width: 130px;
@@ -84,6 +96,7 @@
 
   }
 }
+
 .row {
   margin-left: 0;
 }
@@ -94,6 +107,7 @@ body {
   @include default-font;
 
 }
+
 p, button {
   @include default-font;
 }
@@ -118,6 +132,10 @@ p, button {
         font-size: 14px;
         padding-top: 5px;
         padding-right: 80px;
+      }
+
+      li {
+        font-size: 14px;
       }
     }
 
@@ -173,7 +191,6 @@ p, button {
   transform: rotate($degrees);
 }
 
-
 .hidden {
   display: none;
   visibility: hidden;
@@ -202,7 +219,8 @@ p, button {
   opacity: .5;
   cursor: pointer;
 }
+
 .break {
-  height:125px;
+  height: 125px;
   margin-top: -125px;
 }

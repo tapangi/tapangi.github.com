@@ -2,16 +2,36 @@
   .container {
     #who-section {
       p {
-        margin-left: 135px;
+       // margin-left: 135px;
       }
 
       .sub-section {
+        margin-left: 30px;
+        margin-right: 30px;
+        .side-label {
+          display: none;
+        }
         .description {
-          width: 330px;
+          width: auto;
+
         }
         .photo {
-          width: 250px;
-          height: 164px;
+          //width: 235px;
+          //height: 85px;
+        }
+
+        .middle {
+          vertical-align: top;
+          > div {
+            vertical-align: top;
+            display: inline-block;
+          }
+          .contact-info {
+            ul {
+              margin-left:10px;
+              padding-top:10px;
+            }
+          }
         }
 
       }

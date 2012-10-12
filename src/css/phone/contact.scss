@@ -1,6 +1,9 @@
 @media (max-width: 767px) {
   .container {
     #contact-section {
+      .side-label {
+        display: none;
+      }
       .icon-email {
         width: 100px;
       }
@@ -13,6 +16,14 @@
             width: 310px;
 
           }
+        }
+      }
+      form ul li {
+        .submit {
+          margin-left: 95px;
+        }
+        label.desc {
+          width: 90px;
         }
       }
     }
