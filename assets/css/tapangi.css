@@ -1589,16 +1589,18 @@ form li.complex p.error {
 .rtl #errorLi * {
   text-align: center; }
 
-#contact-section .icon-email {
-  background: url(../img/tapangi-icon-email.png) center center no-repeat;
+#contact-section .icon-email a {
+  background: url(../img/tapangi-icon-email.png) center center no-repeat; }
+#contact-section .icon-twitter a {
+  background: url(../img/tapangi-icon-twitter.png) center center no-repeat; }
+#contact-section .icon-email, #contact-section .icon-twitter {
   width: 130px;
   height: 85px;
-  margin-left: 4px; }
-#contact-section .icon-twitter {
-  background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
-  width: 130px;
-  height: 85px;
-  margin-left: 4px; }
+  margin-left: 4px;
+  background: #DBFF68; }
+  #contact-section .icon-email a, #contact-section .icon-twitter a {
+    display: block;
+    height: 85px; }
 #contact-section .tweets {
   padding: 1px;
   height: 83px;

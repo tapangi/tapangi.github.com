@@ -1,19 +1,24 @@
 #contact-section {
 
 
-  .icon-email {
+  .icon-email a {
     background: url(../img/tapangi-icon-email.png) center center no-repeat;
-  //  background-size: contain;
-    width: 130px;
-    height: 85px;
-    margin-left: 4px;
+
   }
-  .icon-twitter {
+  .icon-twitter a {
     background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
- //    background-size: contain;
+
+
+  }
+  .icon-email,.icon-twitter  {
     width: 130px;
     height: 85px;
     margin-left: 4px;
+    background: #DBFF68;
+    a {
+      display: block;
+      height: 85px;
+    }
   }
   .tweets {
     //min-width: 565px;
