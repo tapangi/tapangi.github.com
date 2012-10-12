@@ -10,12 +10,19 @@
       .tweets {
         .feedcell {
           .feedtext {
-            width: 310px;
+            width: 330px;
 
           }
+        }
+      }
+      form ul li {
+        .submit {
+          margin-left: 115px;
+        }
+        label.desc {
+          width: 110px;
         }
       }
     }
   }
 }
-

@@ -609,8 +609,6 @@ p, button {
       background-image: url(../img/tapangi-icon-kick-off-active.png);
       display: none; }
 
-#who-section > p, #who-section > h3 {
-  margin-left: 140px; }
 #who-section .sub-section {
   padding-bottom: 30px; }
   #who-section .sub-section > div {
@@ -1662,10 +1660,20 @@ form li.complex p.error {
 @media (max-width: 979px) and (min-width: 768px) {
   .container {
     width: 740px; }
-    .container .section .sub-section .carousel .item {
-      margin-left: 245px; }
-      .container .section .sub-section .carousel .item p {
-        padding-right: 25px; }
+    .container .section > h3, .container .section > p {
+      margin-left: 120px;
+      margin-right: 120px; }
+    .container .section .sub-section .carousel {
+      margin-left: 110px;
+      margin-right: 110px; }
+      .container .section .sub-section .carousel .item {
+        margin-left: 250px; }
+        .container .section .sub-section .carousel .item p {
+          padding-right: 25px; }
+        .container .section .sub-section .carousel .item li {
+          font-size: 14px; }
+    .container .section .side-label {
+      width: 110px; }
 
   .break {
     height: 0px;
@@ -1689,9 +1697,15 @@ form li.complex p.error {
       margin-left: 110px; } }
 @media (max-width: 979px) and (min-width: 768px) {
   .container #what-section .sub-section .carousel {
-    height: 310px; }
+    height: 355px; }
     .container #what-section .sub-section .carousel .carousel-control {
-      padding-top: 140px; } }
+      padding-top: 165px; }
+  .container #what-section #what-disc {
+    margin-top: 60px;
+    margin-left: 120px; } }
+@media (max-width: 979px) and (min-width: 768px) {
+  .container #how-section #how-disc {
+    margin-left: 115px; } }
 @media (max-width: 979px) and (min-width: 768px) {
   .container #who-section .sub-section .description {
     width: 330px; }
@@ -1704,7 +1718,11 @@ form li.complex p.error {
   .container #contact-section .icon-twitter {
     width: 100px; }
   .container #contact-section .tweets .feedcell .feedtext {
-    width: 310px; } }
+    width: 330px; }
+  .container #contact-section form ul li .submit {
+    margin-left: 115px; }
+  .container #contact-section form ul li label.desc {
+    width: 110px; } }
 @media (max-width: 767px) {
   .container {
     width: auto; }
