@@ -10,10 +10,14 @@
       .icon-twitter {
         width: 100px;
       }
+      .icon-github {
+        width: 100px;
+      }
       .tweets {
         .feedcell {
+          max-width: 413px;
           .feedtext {
-            width: 310px;
+            max-width: 339px;
 
           }
         }
@@ -30,3 +34,80 @@
   }
 }
 
+@media (max-width: 480px) {
+  .container {
+    #contact-section {
+      .side-label {
+        display: block;
+        background: none;
+        padding: 15px;
+        text-transform: uppercase;
+        text-align: left;
+        font-weight: bold;
+        font-size: 20px;
+        clear: both;
+      }
+      .icon-email, .icon-twitter,.icon-github {
+        width: 32%;
+        margin-left: 2px;
+      }
+      .icon-email {
+        margin-left: 4px;
+      }
+      .tweets {
+        display: block;
+        width: auto;
+        margin-left: 4px;
+        margin-right: 4px;
+        .feedcell {
+
+          .feedtext {
+            width: 75%;
+
+          }
+        }
+      }
+      form ul {
+        width: 300px;
+        margin-left: $mobile-left-gutter;
+        li {
+          &.notranslate, &.buttons {
+            display: inline-block;
+          }
+          .submit {
+            margin-left: 0px;
+          }
+          label.desc {
+            width: 90px;
+            display: block;
+            background: none;
+            padding:5px;
+            padding-top: 10px;
+            text-align: left;
+
+          }
+
+          .field-body {
+            padding: 7px;
+            .fn, .ln {
+              width:112px;
+            }
+            input {
+              height: 20px;
+            }
+            .org, .email, .message {
+              width: 263px;
+            }
+          }
+          .field-body + .field-body {
+            margin-left: 0;
+          }
+          &.buttons {
+            display: block;
+          }
+
+        }
+      }
+    }
+  }
+}

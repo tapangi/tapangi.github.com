@@ -63,7 +63,8 @@
       margin-bottom: 5px;
       > div {
         vertical-align: top;
-        float: left;
+        display: inline-block;
+        //float: left;
       }
     }
     > h3 {
@@ -221,6 +222,10 @@ p, button {
 }
 
 .break {
-  height: 125px;
-  margin-top: -125px;
+  height: 135px;
+ // margin-top: -125px;
+}
+
+.section {
+  margin-bottom: -135px;
 }

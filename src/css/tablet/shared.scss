@@ -34,8 +34,11 @@
     }
   }
   .break {
-    height: 0px;
-    margin: 0px;
+    height: 37px;
+   // margin-top: -37px;
+  }
+  .section {
+    margin-bottom: -37px;
   }
 }
 

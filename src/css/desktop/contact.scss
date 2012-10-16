@@ -1,19 +1,18 @@
 #contact-section {
-
-
   .icon-email a {
     background: url(../img/tapangi-icon-email.png) center center no-repeat;
 
   }
   .icon-twitter a {
     background: url(../img/tapangi-icon-twitter.png) center center no-repeat;
-
-
   }
-  .icon-email,.icon-twitter  {
+  .icon-github a {
+    background: url(../img/tapangi-icon-github.png) center center no-repeat;
+  }
+  .icon-email, .icon-twitter, .icon-github {
     width: 130px;
     height: 85px;
-    margin-left: 4px;
+    margin-left: 0px;
     background: #DBFF68;
     a {
       display: block;
@@ -22,33 +21,37 @@
   }
   .tweets {
     //min-width: 565px;
-    padding:1px;
+    padding: 1px;
     height: 83px;
-    margin-left: 4px;
+    margin-left: 0px;
     overflow: hidden;
     background-color: #555b67;
     color: #dbff68;
+
     .feedcell {
       height: 85px;
-      a{
+      max-width: 396px;
+      padding:5px;
+      a {
         background: none;
         color: #08c;
-
+        vertical-align: top;
       }
       .feedtext {
-        width:450px;
-        padding-top:15px;
+        //width: 450px;
+        display: inline-block;
+        max-width: 321px;
+        vertical-align: top;
         .user {
-          mergin-right:3px;
+          mergin-right: 3px;
         }
       }
       font-size: 13px;
-      * {
-        float: left !important;
-      }
+
       .authorimg {
-        display: block;
-        padding:18px;
+        display: inline-block;
+        padding: 13px;
+        margin:0;
       }
 
     }

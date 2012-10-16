@@ -2,15 +2,19 @@
   .container {
     #contact-section {
       .icon-email {
-        width: 100px;
+        width: 85px;
       }
       .icon-twitter {
-        width: 100px;
+        width: 85px;
+      }
+      .icon-github {
+        width: 85px;
       }
       .tweets {
         .feedcell {
+          max-width: 351px;
           .feedtext {
-            width: 330px;
+            max-width: 277px;
 
           }
         }

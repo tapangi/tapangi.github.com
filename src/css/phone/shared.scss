@@ -1,3 +1,4 @@
+$mobile-left-gutter: 20px;
 @media (max-width: 767px) {
 
   .container {
@@ -18,14 +19,14 @@
 
       }
       > h3, > p {
-        margin-left: 30px;
+        margin-left: $mobile-left-gutter;
         margin-right: 30px;
       }
       .sub-section {
 
         .carousel {
-          margin-left: 5px;
-          margin-right: 5px;
+          margin-left: 0px;
+          margin-right: 0px;
 
           .carousel-control {
             opacity: 0.1;
@@ -42,8 +43,8 @@
           .item {
             margin-left: 0px;
             p, h4 {
-              padding-right: 25px;
-              padding-left: 25px;
+              padding-right: $mobile-left-gutter;
+              padding-left: $mobile-left-gutter;
             }
             ul {
               margin-left: 40px;
@@ -54,11 +55,15 @@
     }
   }
   .break {
-    height: 0px;
-    margin: 0px;
+    height: 37px;
+    // margin-top: -37px;
+  }
+  .section {
+    margin-bottom: -37px;
   }
 
 }
+
 
 
 

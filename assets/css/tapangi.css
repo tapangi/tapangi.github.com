@@ -39,7 +39,7 @@
     margin-bottom: 5px; }
     .container .section .heading > div {
       vertical-align: top;
-      float: left; }
+      display: inline-block; }
   .container .section > h3 {
     margin-left: 140px;
     margin-right: 140px;
@@ -151,8 +151,10 @@ p, button {
   cursor: pointer; }
 
 .break {
-  height: 125px;
-  margin-top: -125px; }
+  height: 135px; }
+
+.section {
+  margin-bottom: -135px; }
 
 .navbar {
   color: #5d636f; }
@@ -1593,37 +1595,42 @@ form li.complex p.error {
   background: url(../img/tapangi-icon-email.png) center center no-repeat; }
 #contact-section .icon-twitter a {
   background: url(../img/tapangi-icon-twitter.png) center center no-repeat; }
-#contact-section .icon-email, #contact-section .icon-twitter {
+#contact-section .icon-github a {
+  background: url(../img/tapangi-icon-github.png) center center no-repeat; }
+#contact-section .icon-email, #contact-section .icon-twitter, #contact-section .icon-github {
   width: 130px;
   height: 85px;
-  margin-left: 4px;
+  margin-left: 0px;
   background: #DBFF68; }
-  #contact-section .icon-email a, #contact-section .icon-twitter a {
+  #contact-section .icon-email a, #contact-section .icon-twitter a, #contact-section .icon-github a {
     display: block;
     height: 85px; }
 #contact-section .tweets {
   padding: 1px;
   height: 83px;
-  margin-left: 4px;
+  margin-left: 0px;
   overflow: hidden;
   background-color: #555b67;
   color: #dbff68; }
   #contact-section .tweets .feedcell {
     height: 85px;
+    max-width: 396px;
+    padding: 5px;
     font-size: 13px; }
     #contact-section .tweets .feedcell a {
       background: none;
-      color: #08c; }
+      color: #08c;
+      vertical-align: top; }
     #contact-section .tweets .feedcell .feedtext {
-      width: 450px;
-      padding-top: 15px; }
+      display: inline-block;
+      max-width: 321px;
+      vertical-align: top; }
       #contact-section .tweets .feedcell .feedtext .user {
         mergin-right: 3px; }
-    #contact-section .tweets .feedcell * {
-      float: left !important; }
     #contact-section .tweets .feedcell .authorimg {
-      display: block;
-      padding: 18px; }
+      display: inline-block;
+      padding: 13px;
+      margin: 0; }
 #contact-section .row.sub-section > div {
   display: inline-block; }
 #contact-section iframe {
@@ -1697,8 +1704,10 @@ form li.complex p.error {
       width: 110px; }
 
   .break {
-    height: 0px;
-    margin: 0px; } }
+    height: 37px; }
+
+  .section {
+    margin-bottom: -37px; } }
 @media (max-width: 979px) and (min-width: 768px) {
   .navbar.navbar-fixed-top {
     position: static; }
@@ -1735,11 +1744,15 @@ form li.complex p.error {
     height: 164px; } }
 @media (max-width: 979px) and (min-width: 768px) {
   .container #contact-section .icon-email {
-    width: 100px; }
+    width: 85px; }
   .container #contact-section .icon-twitter {
-    width: 100px; }
-  .container #contact-section .tweets .feedcell .feedtext {
-    width: 330px; }
+    width: 85px; }
+  .container #contact-section .icon-github {
+    width: 85px; }
+  .container #contact-section .tweets .feedcell {
+    max-width: 351px; }
+    .container #contact-section .tweets .feedcell .feedtext {
+      max-width: 277px; }
   .container #contact-section form ul li .submit {
     margin-left: 115px; }
   .container #contact-section form ul li label.desc {
@@ -1752,11 +1765,11 @@ form li.complex p.error {
     .container .section > h3 {
       margin-top: 10px; }
     .container .section > h3, .container .section > p {
-      margin-left: 30px;
+      margin-left: 20px;
       margin-right: 30px; }
     .container .section .sub-section .carousel {
-      margin-left: 5px;
-      margin-right: 5px; }
+      margin-left: 0px;
+      margin-right: 0px; }
       .container .section .sub-section .carousel .carousel-control {
         opacity: 0.1;
         width: 60px; }
@@ -1768,14 +1781,16 @@ form li.complex p.error {
       .container .section .sub-section .carousel .item {
         margin-left: 0px; }
         .container .section .sub-section .carousel .item p, .container .section .sub-section .carousel .item h4 {
-          padding-right: 25px;
-          padding-left: 25px; }
+          padding-right: 20px;
+          padding-left: 20px; }
         .container .section .sub-section .carousel .item ul {
           margin-left: 40px; }
 
   .break {
-    height: 0px;
-    margin: 0px; } }
+    height: 37px; }
+
+  .section {
+    margin-bottom: -37px; } }
 @media (max-width: 767px) {
   .navbar.navbar-fixed-top {
     position: static; }
@@ -1847,17 +1862,17 @@ form li.complex p.error {
     padding-top: 25px; }
     .container #home-section p {
       font-size: 40px;
-      margin-left: 40px;
-      margin-right: 20px;
+      margin-left: 20px;
+      margin-right: 10px;
       padding-top: 10px; } }
 @media (max-width: 767px) {
   .container #what-section .sub-section {
     margin-top: 200px;
     padding-bottom: 100px; }
     .container #what-section .sub-section .carousel {
-      height: 270px; }
+      height: 320px; }
       .container #what-section .sub-section .carousel .carousel-control {
-        padding-top: 120px; }
+        padding-top: 150px; }
   .container #what-section #what-disc {
     margin-top: -235px;
     margin-left: 50%;
@@ -1912,9 +1927,9 @@ form li.complex p.error {
     margin-top: 235px;
     padding-bottom: 100px; }
     .container #how-section .sub-section .carousel {
-      height: 220px; }
+      height: 250px; }
       .container #how-section .sub-section .carousel .carousel-control {
-        padding-top: 100px; }
+        padding-top: 115px; }
   .container #how-section #how-disc {
     margin-top: -245px;
     margin-left: 50%;
@@ -1990,19 +2005,28 @@ form li.complex p.error {
         transform: rotate(72deg); } }
 @media (max-width: 767px) {
   .container #who-section .sub-section {
-    margin-left: 30px;
-    margin-right: 30px; }
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 0; }
     .container #who-section .sub-section .side-label {
-      display: none; }
+      background: none;
+      padding: 0;
+      font-weight: bold;
+      text-align: left;
+      font-size: 20px; }
     .container #who-section .sub-section .description {
-      width: auto; }
+      width: auto;
+      padding: 0; }
+    .container #who-section .sub-section .photo {
+      width: 260px;
+      height: 170px; }
     .container #who-section .sub-section .middle {
       vertical-align: top; }
       .container #who-section .sub-section .middle > div {
         vertical-align: top;
         display: inline-block; }
       .container #who-section .sub-section .middle .contact-info ul {
-        margin-left: 10px;
+        margin-left: 0px;
         padding-top: 10px; } }
 @media (max-width: 767px) {
   .container #contact-section .side-label {
@@ -2011,9 +2035,61 @@ form li.complex p.error {
     width: 100px; }
   .container #contact-section .icon-twitter {
     width: 100px; }
-  .container #contact-section .tweets .feedcell .feedtext {
-    width: 310px; }
+  .container #contact-section .icon-github {
+    width: 100px; }
+  .container #contact-section .tweets .feedcell {
+    max-width: 413px; }
+    .container #contact-section .tweets .feedcell .feedtext {
+      max-width: 339px; }
   .container #contact-section form ul li .submit {
     margin-left: 95px; }
   .container #contact-section form ul li label.desc {
     width: 90px; } }
+@media (max-width: 480px) {
+  .container #contact-section .side-label {
+    display: block;
+    background: none;
+    padding: 15px;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: bold;
+    font-size: 20px;
+    clear: both; }
+  .container #contact-section .icon-email, .container #contact-section .icon-twitter, .container #contact-section .icon-github {
+    width: 32%;
+    margin-left: 2px; }
+  .container #contact-section .icon-email {
+    margin-left: 4px; }
+  .container #contact-section .tweets {
+    display: block;
+    width: auto;
+    margin-left: 4px;
+    margin-right: 4px; }
+    .container #contact-section .tweets .feedcell .feedtext {
+      width: 75%; }
+  .container #contact-section form ul {
+    width: 300px;
+    margin-left: 20px; }
+    .container #contact-section form ul li.notranslate, .container #contact-section form ul li.buttons {
+      display: inline-block; }
+    .container #contact-section form ul li .submit {
+      margin-left: 0px; }
+    .container #contact-section form ul li label.desc {
+      width: 90px;
+      display: block;
+      background: none;
+      padding: 5px;
+      padding-top: 10px;
+      text-align: left; }
+    .container #contact-section form ul li .field-body {
+      padding: 7px; }
+      .container #contact-section form ul li .field-body .fn, .container #contact-section form ul li .field-body .ln {
+        width: 112px; }
+      .container #contact-section form ul li .field-body input {
+        height: 20px; }
+      .container #contact-section form ul li .field-body .org, .container #contact-section form ul li .field-body .email, .container #contact-section form ul li .field-body .message {
+        width: 263px; }
+    .container #contact-section form ul li .field-body + .field-body {
+      margin-left: 0; }
+    .container #contact-section form ul li.buttons {
+      display: block; } }

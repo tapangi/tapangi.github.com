@@ -29,7 +29,6 @@ Tapangi.onReady = () ->
   Tapangi.initializeWhatDisc()
   Tapangi.initializeHowDisc()
   Tapangi.initializeBackToTop()
-
   gettwitterfeed("tweets", "@polishprince")
 
 Tapangi.onResize = () ->
