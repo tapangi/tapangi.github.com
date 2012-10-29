@@ -21,7 +21,7 @@ Tapangi.onReady = () ->
   Tapangi.initializeHowDisc()
   Tapangi.initializeBackToTop()
   Tapangi.initializeCarouselSwipe()
-  gettwitterfeed("tweets", "@polishprince")
+  gettwitterfeed("tweets", "@polishprince OR @liz315 OR @tapangi OR #tapangi")
 
 Tapangi.onResize = () ->
   navbarHeight = if window.innerWidth > 979 then parseInt $('.navbar .navbar-inner').css('height').substr(0, 3), 10 else 0

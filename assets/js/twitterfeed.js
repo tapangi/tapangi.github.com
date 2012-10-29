@@ -94,6 +94,6 @@ function showfeed(viewerid){
 
 	viewer.aidx=0;
 	animatefeed(viewerid);
-	//setTimeout(function(){showfeed(viewerid);},5000);
+	setTimeout(function(){showfeed(viewerid);},5000);
 
 }

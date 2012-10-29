@@ -16,7 +16,7 @@ Tapangi.onReady = function() {
   Tapangi.initializeHowDisc();
   Tapangi.initializeBackToTop();
   Tapangi.initializeCarouselSwipe();
-  return gettwitterfeed("tweets", "@polishprince");
+  return gettwitterfeed("tweets", "@polishprince OR @liz315 OR @tapangi OR #tapangi");
 };
 
 Tapangi.onResize = function() {
