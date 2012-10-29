@@ -2,16 +2,7 @@
 # this is used to serialize the form values to JSON
 # @return {Object}
 ##
-#$.fn.serializeObject = () ->
-#  o = {}
-#  a = this.serializeArray()
-#  $.each a, () ->
-#    if (o[this.name] != undefined)
-#      o[this.name] = [o[this.name]] if !o[this.name].push
-#      o[this.name].push(this.value || '')
-#    else
-#      o[this.name] = this.value || ''
-#  return o
+
 
 
 
@@ -29,6 +20,7 @@ Tapangi.onReady = () ->
   Tapangi.initializeWhatDisc()
   Tapangi.initializeHowDisc()
   Tapangi.initializeBackToTop()
+  Tapangi.initializeCarouselSwipe()
   gettwitterfeed("tweets", "@polishprince")
 
 Tapangi.onResize = () ->
@@ -50,9 +42,7 @@ Tapangi.onResize = () ->
 
 $(document).ready(Tapangi.onReady)
 $(window).resize(Tapangi.onResize)
-$("iframe").load (e) ->
-  $("#thanks").modal("show")
-  $("#contact-form")[0].reset()
+
 
 $(".btn-navbar").bind 'click', () ->
   $(this).toggleClass("active")
@@ -62,4 +52,15 @@ $(".btn-navbar").bind 'click', () ->
 
 Tapangi.initializeBackToTop  = ()->
   $(".back-to-top").click (e)->
+    window.location.hash = "home";
     window.location.hash = "";
+
+Tapangi.initializeCarouselSwipe = () ->
+
+  $("#what-carousel, #how-carousel").bind "swipeLeft", (e) ->
+    $(this).carousel("next")
+  $("#what-carousel, #how-carousel").bind "swipeRight", (e) ->
+    $(this).carousel("prev")
+
+#  $("#what-carousel, #how-carousel").bind "swiperup", (e) ->
+#    alert("swipe")

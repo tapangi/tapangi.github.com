@@ -144,10 +144,8 @@ p, button {
   width: 42px;
   height: 37px;
   background: url(../img/tapangi-back-to-top.png) center center no-repeat;
-  background-size: contain;
   bottom: 0;
   right: 0px;
-  opacity: .5;
   cursor: pointer; }
 
 .break {
@@ -155,6 +153,9 @@ p, button {
 
 .section {
   margin-bottom: -135px; }
+
+.modal-body p {
+  font-size: 16px; }
 
 .navbar {
   color: #5d636f; }
@@ -187,6 +188,7 @@ p, button {
       .navbar .btn-navbar.active .icon {
         background: url(../img/tapangi-navbar-button-active.png) center center no-repeat; }
   .navbar .navbar-inner {
+    filter: none;
     background-image: none;
     background-color: #ffffff;
     height: 100px; }
@@ -622,29 +624,31 @@ p, button {
       background-image: url(../img/tapangi-icon-kick-off-active.png);
       display: none; }
 
-#who-section .sub-section {
-  padding-bottom: 100px; }
-  #who-section .sub-section > div {
-    display: inline-block;
-    vertical-align: top; }
-  #who-section .sub-section .description {
-    padding: 10px;
-    width: 445px; }
-  #who-section .sub-section .photo {
-    width: 335px;
-    height: 220px;
-    background-size: cover;
-    background-positon: center center;
-    background-repeat: no-repeat; }
-    #who-section .sub-section .photo.piotr {
-      background-image: url(../img/piotr.jpg); }
-    #who-section .sub-section .photo.liz {
-      background-image: url(../img/liz.jpg); }
-  #who-section .sub-section .contact-info ul {
-    padding-top: 25px;
-    list-style: none; }
-    #who-section .sub-section .contact-info ul li {
-      padding: 2px; }
+#who-section {
+  padding-bottom: 25px; }
+  #who-section .sub-section {
+    padding-bottom: 100px; }
+    #who-section .sub-section > div {
+      display: inline-block;
+      vertical-align: top; }
+    #who-section .sub-section .description {
+      padding: 10px;
+      width: 445px; }
+    #who-section .sub-section .photo {
+      width: 335px;
+      height: 220px;
+      background-size: cover;
+      background-positon: center center;
+      background-repeat: no-repeat; }
+      #who-section .sub-section .photo.piotr {
+        background-image: url(../img/piotr.jpg); }
+      #who-section .sub-section .photo.liz {
+        background-image: url(../img/liz.jpg); }
+    #who-section .sub-section .contact-info ul {
+      padding-top: 25px;
+      list-style: none; }
+      #who-section .sub-section .contact-info ul li {
+        padding: 2px; }
 
 .info {
   display: inline-block;
@@ -1680,10 +1684,12 @@ form li.complex p.error {
     #contact-section form ul li .submit {
       margin-left: 135px; }
       #contact-section form ul li .submit [type=submit] {
-        padding-top: 30px;
-        padding-bottom: 30px;
-        width: 130px;
+        padding: 30px;
+        min-width: 130px;
         background-color: #dbff68; }
+        #contact-section form ul li .submit [type=submit]:disabled {
+          background-color: #e2e2e2;
+          color: #0D78BF; }
 
 @media (max-width: 979px) and (min-width: 768px) {
   .container {
@@ -1859,12 +1865,15 @@ form li.complex p.error {
       border-radius: 0px; } }
 @media (max-width: 767px) {
   .container #home-section {
-    padding-top: 25px; }
+    padding-top: 0px;
+    margin-top: -20px; }
     .container #home-section p {
       font-size: 40px;
       margin-left: 20px;
       margin-right: 10px;
-      padding-top: 10px; } }
+      padding-top: 0px;
+      padding-bottom: 15px;
+      line-height: 45px; } }
 @media (max-width: 767px) {
   .container #what-section .sub-section {
     margin-top: 200px;
@@ -1934,7 +1943,7 @@ form li.complex p.error {
     margin-top: -245px;
     margin-left: 50%;
     margin-right: 50%;
-    left: -111px; }
+    left: -122px; }
     .container #how-section #how-disc .indicator {
       top: 204px;
       left: 106px;
@@ -2057,14 +2066,14 @@ form li.complex p.error {
     clear: both; }
   .container #contact-section .icon-email, .container #contact-section .icon-twitter, .container #contact-section .icon-github {
     width: 32%;
-    margin-left: 2px; }
+    margin-left: 0px; }
   .container #contact-section .icon-email {
-    margin-left: 4px; }
+    margin-left: 3px; }
   .container #contact-section .tweets {
     display: block;
     width: auto;
-    margin-left: 4px;
-    margin-right: 4px; }
+    margin-left: 3px;
+    margin-right: 3px; }
     .container #contact-section .tweets .feedcell .feedtext {
       width: 75%; }
   .container #contact-section form ul {
@@ -2093,3 +2102,6 @@ form li.complex p.error {
       margin-left: 0; }
     .container #contact-section form ul li.buttons {
       display: block; } }
+@media (max-width: 320px) {
+  .container #contact-section form ul {
+    margin-left: 10px; } }

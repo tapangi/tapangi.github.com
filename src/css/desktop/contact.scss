@@ -124,10 +124,13 @@
         .submit {
           margin-left: 135px;
           [ type = submit ] {
-            padding-top: 30px;
-            padding-bottom: 30px;
-            width: 130px;
+            padding: 30px;
+            min-width: 130px;
             background-color: #dbff68;
+            &:disabled {
+              background-color: #e2e2e2;
+              color: #0D78BF;
+            }
           }
         }
       }

@@ -15,6 +15,7 @@ Tapangi.onReady = function() {
   Tapangi.initializeWhatDisc();
   Tapangi.initializeHowDisc();
   Tapangi.initializeBackToTop();
+  Tapangi.initializeCarouselSwipe();
   return gettwitterfeed("tweets", "@polishprince");
 };
 
@@ -34,11 +35,6 @@ $(document).ready(Tapangi.onReady);
 
 $(window).resize(Tapangi.onResize);
 
-$("iframe").load(function(e) {
-  $("#thanks").modal("show");
-  return $("#contact-form")[0].reset();
-});
-
 $(".btn-navbar").bind('click', function() {
   $(this).toggleClass("active");
   return $(".nav-collapse li > a").bind("click", function() {
@@ -48,7 +44,17 @@ $(".btn-navbar").bind('click', function() {
 
 Tapangi.initializeBackToTop = function() {
   return $(".back-to-top").click(function(e) {
+    window.location.hash = "home";
     return window.location.hash = "";
+  });
+};
+
+Tapangi.initializeCarouselSwipe = function() {
+  $("#what-carousel, #how-carousel").bind("swipeLeft", function(e) {
+    return $(this).carousel("next");
+  });
+  return $("#what-carousel, #how-carousel").bind("swipeRight", function(e) {
+    return $(this).carousel("prev");
   });
 };
 
@@ -58,18 +64,40 @@ Tapangi.initializeBackToTop = function() {
 */
 
 
+$.fn.serializeObject = function() {
+  var a, o;
+  o = {};
+  a = this.serializeArray();
+  $.each(a, function() {
+    if (o[this.name] !== void 0) {
+      if (!o[this.name].push) {
+        o[this.name] = [o[this.name]];
+      }
+      return o[this.name].push(this.value || '');
+    } else {
+      return o[this.name] = this.value || '';
+    }
+  });
+  return o;
+};
+
 Tapangi.initializeForm = function() {
   var $contactForm, $fields;
-  console.log("initialize form");
   $contactForm = $("#contact-form");
-  $contactForm.find("[type=submit]").prop('disabled', true);
   $fields = $contactForm.find("input, textarea");
   $fields.bind("change", function(event) {
     return Tapangi.validateForm($contactForm);
   });
+  Tapangi.validateForm($contactForm);
   $contactForm.bind('submit', function(e) {
     e.preventDefault();
     if (Tapangi.validateForm($contactForm)) {
+      $("iframe").load(function(e) {
+        $("#thanks").modal("show");
+        $contactForm[0].reset();
+        $(this).unbind("load");
+        return Tapangi.validateForm($contactForm);
+      });
       $contactForm[0].submit();
     }
     return false;
@@ -87,16 +115,19 @@ Tapangi.validateForm = function($contactForm) {
       if (values[key] === "") {
         validationErrors.push(key);
       }
-    }
-    if (key === "Field2" && !Tapangi.emailRegex.test(values[key])) {
-      validationErrors.push(key);
+      if (key === "Field2" && !Tapangi.emailRegex.test(values[key])) {
+        validationErrors.push(key);
+      }
     }
   }
   if (validationErrors.length === 0) {
-    $contactForm.find("[type=submit]").prop('disabled', false);
+    console.log("validetion " + validationErrors.length);
+    $contactForm.find("[type=submit]").prop('disabled', false).val("Submit");
     return true;
+  } else {
+    $contactForm.find("[type=submit]").prop('disabled', true).val("Please fill out the form");
+    return false;
   }
-  return true;
 };
 
 Tapangi.afterSubmitComplete = function(data, status) {

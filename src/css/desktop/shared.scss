@@ -214,18 +214,20 @@ p, button {
   width: 42px;
   height: 37px;
   background: url(../img/tapangi-back-to-top.png) center center no-repeat;
-  background-size: contain;
   bottom: 0;
   right: 0px;
-  opacity: .5;
   cursor: pointer;
 }
 
 .break {
   height: 135px;
+
  // margin-top: -125px;
 }
 
 .section {
   margin-bottom: -135px;
+}
+.modal-body p {
+  font-size:16px;
 }

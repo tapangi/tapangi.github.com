@@ -49,16 +49,16 @@
       }
       .icon-email, .icon-twitter,.icon-github {
         width: 32%;
-        margin-left: 2px;
+        margin-left: 0px;
       }
       .icon-email {
-        margin-left: 4px;
+        margin-left: 3px;
       }
       .tweets {
         display: block;
         width: auto;
-        margin-left: 4px;
-        margin-right: 4px;
+        margin-left: 3px;
+        margin-right: 3px;
         .feedcell {
 
           .feedtext {
@@ -107,6 +107,15 @@
           }
 
         }
+      }
+    }
+  }
+}
+@media (max-width: 320px) {
+  .container {
+    #contact-section {
+      form ul {
+        margin-left: $mobile-left-gutter / 2;
       }
     }
   }
