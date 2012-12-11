@@ -230,6 +230,10 @@ p, button {
         background: #ffffff;
         color: #1a51aa; }
 
+@-moz-document url-prefix() {
+  .navbar .navbar-inner .nav > li .pointy {
+    margin-right: 0; } }
+
 #home-section p {
   font-family: 'TitilliumText22LThin';
   font-size: 45px;

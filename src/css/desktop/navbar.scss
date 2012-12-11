@@ -103,3 +103,9 @@ $navbar-height-collapse: 40px;
   }
 
 }
+
+@-moz-document url-prefix() {
+  .navbar .navbar-inner .nav > li .pointy {
+    margin-right:0;
+  }
+}
